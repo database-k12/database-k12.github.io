@@ -1,0 +1,693 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Lessons on Database Systems</title>
+    <link>https://database-k12.github.io/lessons/</link>
+    <description>Recent content in Lessons on Database Systems</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <atom:link href="https://database-k12.github.io/lessons/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Relational Databases</title>
+      <link>https://database-k12.github.io/lessons/02/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://database-k12.github.io/lessons/02/</guid>
+      <description>
+
+&lt;h1 id=&#34;relational-databases&#34;&gt;Relational Databases&lt;/h1&gt;
+
+&lt;p&gt;&lt;a href=&#34;highlight&#34;&gt;!&lt;/a&gt;&lt;/p&gt;
+
+&lt;h1 id=&#34;background&#34;&gt;Background&lt;/h1&gt;
+
+&lt;p&gt;&lt;a href=&#34;scale 0.8&#34;&gt;!&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;History&lt;/p&gt;
+
+&lt;p&gt;Invented in response to the increasing needs for data storage and data
+management from the growing financial banking industry.  &lt;a href=&#34;box&#34;&gt;!&lt;/a&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;1974: Invented by Edgar Frank Codd at IBM San Jose research lab.&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;1977: Oracle Database&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;1982: IngreSQL, UC Berkeley&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;1983: IBM DB2&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;1989: Microsoft SQL Server&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;1995: MySQL&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;1996: PostgreSQL&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;2000: SQLite&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;2009: Amazon Relational Data Service (RDS)&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;2015: Google Big Table Service&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Tables everywhere</title>
+      <link>https://database-k12.github.io/lessons/01/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://database-k12.github.io/lessons/01/</guid>
+      <description>
+
+&lt;h1 id=&#34;tables-everywhere&#34;&gt;Tables everywhere&lt;/h1&gt;
+
+&lt;p&gt;&lt;a href=&#34;highlight&#34;&gt;!&lt;/a&gt;&lt;/p&gt;
+
+&lt;h1 id=&#34;the-first-mcdonald-s-ledger-1959&#34;&gt;The first McDonald&amp;rsquo;s ledger, 1959&lt;/h1&gt;
+
+&lt;p&gt;&lt;img src=&#34;mcdonald-ledger-1959.png&#34;&gt;&lt;/img&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;note&#34;&gt;!&lt;/a&gt;
+The sales ledger from Lou Groen’s opening day of business, January 13, 1959, at
+his first McDonald’s in Monfort Heights, Ohio. Image courtesy of Paul Groen.&lt;/p&gt;
+
+&lt;h1 id=&#34;new-york-city-burial-record-1830&#34;&gt;New York City Burial Record, 1830&lt;/h1&gt;
+
+&lt;p&gt;&lt;img src=&#34;burial-record-1830.jpg&#34;&gt;&lt;/img&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;note&#34;&gt;!&lt;/a&gt;
+The Original Ledger of Burial Records, New York Marble Cemetery.
+&lt;a href=&#34;https://greenwichvillagehistory.wordpress.com/2012/11/13/&#34;&gt;Original source&lt;/a&gt;&lt;/p&gt;
+
+&lt;h1 id=&#34;tycho-brahe-s-star-catalog-1602&#34;&gt;Tycho Brahe&amp;rsquo;s Star Catalog, 1602&lt;/h1&gt;
+
+&lt;p&gt;&lt;img src=&#34;tycho.jpg&#34; height=&#34;500px&#34;&gt;&lt;/img&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;note&#34;&gt;!&lt;/a&gt;
+By 1592, Tycho had produced a catalogue of 777 stars, the first new catalogue
+known to the Latin West since the time of Ptolemy. This catalogue was printed
+for inclusion in the Astronomiae instauratae progymnasmata.&lt;/p&gt;
+
+&lt;h1 id=&#34;hockey-statistics-2014&#34;&gt;Hockey Statistics, 2014&lt;/h1&gt;
+
+&lt;p&gt;&lt;img src=&#34;hockey.jpg&#34;&gt;&lt;/img&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;note&#34;&gt;!&lt;/a&gt; NHL players of 2014&lt;/p&gt;
+
+&lt;h1 id=&#34;ebola-clinical-records-2015&#34;&gt;Ebola clinical records, 2015&lt;/h1&gt;
+
+&lt;p&gt;&lt;img src=&#34;ebola-2015.jpg&#34;&gt;&lt;/img&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;note&#34;&gt;!&lt;/a&gt; Tracking cases at the Liberian Ministry of Health and Social Welfare.
+&lt;a href=&#34;http://motherboard.vice.com/read/ebolas-paper-trail&#34;&gt;Original source&lt;/a&gt;&lt;/p&gt;
+
+&lt;h1 id=&#34;what-s-in-common&#34;&gt;What&amp;rsquo;s in common?&lt;/h1&gt;
+
+&lt;p&gt;&lt;center style=&#34;margin-top: 150px&#34;&gt;
+Tabular layout
+&lt;/center&gt;&lt;/p&gt;
+
+&lt;h1 id=&#34;tables&#34;&gt;Tables&lt;/h1&gt;
+
+&lt;p&gt;&lt;a href=&#34;highlight&#34;&gt;!&lt;/a&gt;&lt;/p&gt;
+
+&lt;h1 id=&#34;terminologies&#34;&gt;Terminologies&lt;/h1&gt;
+
+&lt;p&gt;&lt;a href=&#34;columns 6:&#34;&gt;!&lt;/a&gt;&lt;/p&gt;
+
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;City&lt;/th&gt;
+&lt;th&gt;Province&lt;/th&gt;
+&lt;th&gt;Population&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Oshawa&lt;/td&gt;
+&lt;td&gt;Ontario&lt;/td&gt;
+&lt;td&gt;140,000&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;Toronto&lt;/td&gt;
+&lt;td&gt;Ontario&lt;/td&gt;
+&lt;td&gt;2,600,000&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;Montreal&lt;/td&gt;
+&lt;td&gt;Quebec&lt;/td&gt;
+&lt;td&gt;1,600,000&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;Clarington&lt;/td&gt;
+&lt;td&gt;Ontario&lt;/td&gt;
+&lt;td&gt;84,000&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;Paris&lt;/td&gt;
+&lt;td&gt;Ontario&lt;/td&gt;
+&lt;td&gt;11,000&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;Brooklin&lt;/td&gt;
+&lt;td&gt;Ontario&lt;/td&gt;
+&lt;td&gt;NULL&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;&lt;a href=&#34;split&#34;&gt;!&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;Some definitions:&lt;/em&gt;&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;Table (relation)&lt;/li&gt;
+&lt;li&gt;Attributes (columns)&lt;/li&gt;
+&lt;li&gt;Tuples (rows)&lt;/li&gt;
+&lt;li&gt;Values (cell)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
+
+&lt;h1 id=&#34;table&#34;&gt;Table&lt;/h1&gt;
+
+&lt;p&gt;&lt;a href=&#34;columns 6:&#34;&gt;!&lt;/a&gt;&lt;/p&gt;
+
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;City&lt;/th&gt;
+&lt;th&gt;Province&lt;/th&gt;
+&lt;th&gt;Population&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Oshawa&lt;/td&gt;
+&lt;td&gt;Ontario&lt;/td&gt;
+&lt;td&gt;140,000&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;Toronto&lt;/td&gt;
+&lt;td&gt;Ontario&lt;/td&gt;
+&lt;td&gt;2,600,000&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;Montreal&lt;/td&gt;
+&lt;td&gt;Quebec&lt;/td&gt;
+&lt;td&gt;1,600,000&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;Clarington&lt;/td&gt;
+&lt;td&gt;Ontario&lt;/td&gt;
+&lt;td&gt;84,000&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;Paris&lt;/td&gt;
+&lt;td&gt;Ontario&lt;/td&gt;
+&lt;td&gt;11,000&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;Brooklin&lt;/td&gt;
+&lt;td&gt;Ontario&lt;/td&gt;
+&lt;td&gt;NULL&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;&lt;a href=&#34;split&#34;&gt;!&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;This is a table.  It consists of&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;three attributes&lt;/li&gt;
+&lt;li&gt;six tuples&lt;/li&gt;
+&lt;li&gt;17 data values, and one missing value.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&#34;attribute&#34;&gt;Attribute&lt;/h1&gt;
+
+&lt;p&gt;An &lt;em&gt;attribute&lt;/em&gt; is a column in a table.  It consists&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;a name&lt;/li&gt;
+&lt;li&gt;a data type.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;a href=&#34;columns 5:&#34;&gt;!&lt;/a&gt;&lt;/p&gt;
+
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;City&lt;/th&gt;
+&lt;th&gt;Province&lt;/th&gt;
+&lt;th&gt;Population&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&amp;hellip;&lt;/td&gt;
+&lt;td&gt;&amp;hellip;&lt;/td&gt;
+&lt;td&gt;&amp;hellip;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;&lt;a href=&#34;split&#34;&gt;!&lt;/a&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;There are three attributes.&lt;/li&gt;
+&lt;li&gt;The first attribute is &lt;code&gt;City&lt;/code&gt;, and its data type is &lt;code&gt;string&lt;/code&gt;.&lt;/li&gt;
+&lt;li&gt;The last attribute is &lt;code&gt;Population&lt;/code&gt;, and its data type is &lt;code&gt;integer&lt;/code&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&#34;tuple&#34;&gt;Tuple&lt;/h1&gt;
+
+&lt;p&gt;A tuple is a row of data in a table.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;columns 6:&#34;&gt;!&lt;/a&gt;&lt;/p&gt;
+
+&lt;table&gt;
+    &lt;thead&gt;
+    &lt;tr&gt;
+        &lt;th&gt;City&lt;/th&gt;
+        &lt;th&gt;Province&lt;/th&gt;
+        &lt;th&gt;Population&lt;/th&gt;
+    &lt;/tr&gt;
+    &lt;/thead&gt;
+    &lt;tr style=background:#a6a&gt;
+        &lt;td&gt;Paris&lt;/td&gt;
+        &lt;td&gt;Ontario&lt;/td&gt;
+        &lt;td&gt;11,000&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr style=&#34;background: #afa&#34;&gt;
+        &lt;td&gt;Brooklin&lt;/td&gt;
+        &lt;td&gt;Ontario&lt;/td&gt;
+        &lt;td&gt;NULL&lt;/td&gt;
+    &lt;/tr&gt;
+&lt;/table&gt;
+
+&lt;p&gt;&lt;a href=&#34;split&#34;&gt;!&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Here are two tuples:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;The first tuple has three attributes, and their respective data values.&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;The second tuple also has the same three attributes, but different data
+values.  Also the second tuple has a &lt;em&gt;missing&lt;/em&gt; value.&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&#34;data-representation&#34;&gt;Data Representation&lt;/h1&gt;
+
+&lt;p&gt;&lt;a href=&#34;highlight&#34;&gt;!&lt;/a&gt;&lt;/p&gt;
+
+&lt;h1 id=&#34;data-modeling&#34;&gt;Data Modeling&lt;/h1&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;Data in a specific domain&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;For example:&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;Student records&lt;/li&gt;
+&lt;li&gt;Google map&lt;/li&gt;
+&lt;li&gt;Network traffic&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;This data is not in any particular form. &lt;a href=&#34;box&#34;&gt;!&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Design the &lt;em&gt;layout&lt;/em&gt; of one or more &lt;em&gt;tables&lt;/em&gt; to store the domain specific data.&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;The data must be stored in a lossless form.&lt;/p&gt;
+
+&lt;p&gt;This is &lt;strong&gt;data modeling&lt;/strong&gt;.&lt;/p&gt;
+&lt;/blockquote&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&#34;case-study-a-social-graph-as-tables&#34;&gt;Case study: a social graph as tables&lt;/h1&gt;
+
+&lt;p&gt;&lt;a href=&#34;columns 6:&#34;&gt;!&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;social-graph.png&#34;&gt;&lt;/img&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;split&#34;&gt;!&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Here is a simple social graph between four individuals.&lt;/p&gt;
+
+&lt;p&gt;How do we encode this as one or more tables?&lt;/p&gt;
+
+&lt;h1 id=&#34;toc_15&#34;&gt;___________________&lt;/h1&gt;
+
+&lt;p&gt;&lt;a href=&#34;columns 6:&#34;&gt;!&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;social-graph.png&#34;&gt;&lt;/img&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;split&#34;&gt;!&lt;/a&gt;&lt;/p&gt;
+
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;person&lt;/th&gt;
+&lt;th&gt;knows&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Steve Jobs&lt;/td&gt;
+&lt;td&gt;Marissa Mayer&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;Steve Jobs&lt;/td&gt;
+&lt;td&gt;Bill Gates&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;Bill Gates&lt;/td&gt;
+&lt;td&gt;Marissa Mayer&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;Bill Gates&lt;/td&gt;
+&lt;td&gt;Bill Job&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;&lt;a href=&#34;***&#34;&gt;!&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;It&amp;rsquo;s important to note that this is a &lt;em&gt;lossless&lt;/em&gt; encoding of the social graph.&lt;/p&gt;
+
+&lt;h1 id=&#34;toc_16&#34;&gt;________________________&lt;/h1&gt;
+
+&lt;p&gt;&lt;a href=&#34;columns 8:&#34;&gt;!&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;social-graph-2.png&#34;&gt;&lt;/img&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;split&#34;&gt;!&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;How do we model the additional information of the augmented social graph?&lt;/p&gt;
+
+&lt;h1 id=&#34;toc_17&#34;&gt;___________________________&lt;/h1&gt;
+
+&lt;p&gt;&lt;a href=&#34;columns 5:&#34;&gt;!&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;social-graph-2.png&#34;&gt;&lt;/img&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;split&#34;&gt;!&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Use more tables &lt;a href=&#34;box&#34;&gt;!&lt;/a&gt;&lt;/p&gt;
+
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;person&lt;/th&gt;
+&lt;th&gt;knows&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Steve Jobs&lt;/td&gt;
+&lt;td&gt;Marissa Mayer&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;Steve Jobs&lt;/td&gt;
+&lt;td&gt;Bill Gates&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;Bill Gates&lt;/td&gt;
+&lt;td&gt;Marissa Mayer&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;Bill Gates&lt;/td&gt;
+&lt;td&gt;Bill Joy&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;person&lt;/th&gt;
+&lt;th&gt;position&lt;/th&gt;
+&lt;th&gt;company&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Steve Jobs&lt;/td&gt;
+&lt;td&gt;CEO&lt;/td&gt;
+&lt;td&gt;Apple&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;Marissa Mayer&lt;/td&gt;
+&lt;td&gt;CEO&lt;/td&gt;
+&lt;td&gt;Yahoo&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;Bill Gates&lt;/td&gt;
+&lt;td&gt;Chairman&lt;/td&gt;
+&lt;td&gt;Microsoft&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;Bill Joy&lt;/td&gt;
+&lt;td&gt;Chief Scientist&lt;/td&gt;
+&lt;td&gt;SUN Microsystems&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h1 id=&#34;toc_18&#34;&gt;___________________________&lt;/h1&gt;
+
+&lt;p&gt;What if we use one table? &lt;a href=&#34;box&#34;&gt;!&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;columns 7:&#34;&gt;!&lt;/a&gt;&lt;/p&gt;
+
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;person&lt;/th&gt;
+&lt;th&gt;position&lt;/th&gt;
+&lt;th&gt;company&lt;/th&gt;
+&lt;th&gt;knows&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Steve Jobs&lt;/td&gt;
+&lt;td&gt;CEO&lt;/td&gt;
+&lt;td&gt;Apple&lt;/td&gt;
+&lt;td&gt;Marissa Mayer&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;Steve Jobs&lt;/td&gt;
+&lt;td&gt;&lt;red&gt;CEO&lt;/red&gt;&lt;/td&gt;
+&lt;td&gt;&lt;red&gt;Apple&lt;/red&gt;&lt;/td&gt;
+&lt;td&gt;Bill Gates&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;Bill Gates&lt;/td&gt;
+&lt;td&gt;Chairman&lt;/td&gt;
+&lt;td&gt;Microsoft&lt;/td&gt;
+&lt;td&gt;Marissa Mayer&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;Bill Gates&lt;/td&gt;
+&lt;td&gt;&lt;red&gt;Chairman&lt;/red&gt;&lt;/td&gt;
+&lt;td&gt;&lt;red&gt;Microsoft&lt;/red&gt;&lt;/td&gt;
+&lt;td&gt;Bill Joy&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;Marissa Mayer&lt;/td&gt;
+&lt;td&gt;CEO&lt;/td&gt;
+&lt;td&gt;Yahoo&lt;/td&gt;
+&lt;td&gt;&lt;blue&gt;NULL&lt;/blue&gt;&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;Bill Joy&lt;/td&gt;
+&lt;td&gt;Chief Scientist&lt;/td&gt;
+&lt;td&gt;SUN Microsystems&lt;/td&gt;
+&lt;td&gt;&lt;blue&gt;NULL&lt;/blue&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;&lt;a href=&#34;split&#34;&gt;!&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Forcing everything to be stored as a single table causes some issues:&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;Data redundancy: &lt;red&gt;CEO&lt;/red&gt; and &lt;red&gt;Apple&lt;/red&gt; are storied multiple
+times just because &lt;code&gt;Steve Jobs&lt;/code&gt; knows lots of people.&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;blue&gt;NULL&lt;/blue&gt; values are used for &lt;code&gt;Marissa Mayer&lt;/code&gt; and &lt;code&gt;Bill Joy&lt;/code&gt;.&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h1 id=&#34;data-modeling-1&#34;&gt;Data modeling&lt;/h1&gt;
+
+&lt;p&gt;In this course, we will explore the theory and best practices of data modeling
+with tables.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;***&#34;&gt;!&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;(A lot) more on this in the coming weeks.&lt;/p&gt;
+
+&lt;h1 id=&#34;summary&#34;&gt;Summary&lt;/h1&gt;
+
+&lt;p&gt;&lt;a href=&#34;highlight&#34;&gt;!&lt;/a&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;Tables&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Attributes&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Tuples&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Values (data and missing)&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Data modeling&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&#34;what-s-to-come&#34;&gt;What&amp;rsquo;s to come.&lt;/h1&gt;
+
+&lt;p&gt;&lt;a href=&#34;highlight&#34;&gt;!&lt;/a&gt;&lt;/p&gt;
+
+&lt;h1 id=&#34;relational-data-model&#34;&gt;Relational data model&lt;/h1&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;Table schema and table instances&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Constraints to maintain data integrity&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Relational databases and expressing relational data in Structured Query
+Language (SQL)&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&#34;data-analysis-using-sql&#34;&gt;Data Analysis using SQL&lt;/h1&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;Theory of relational algebra and SQL&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Aggregration and complex SQL&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&#34;programming-interface-to-databases&#34;&gt;Programming interface to databases&lt;/h1&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;Python application programming interface (API)&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Case studies of database API&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Testing experimental features</title>
+      <link>https://database-k12.github.io/lessons/sandbox/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://database-k12.github.io/lessons/sandbox/</guid>
+      <description>
+
+&lt;h1 id=&#34;experimental-features&#34;&gt;Experimental features&lt;/h1&gt;
+
+&lt;p&gt;&lt;a href=&#34;highlight&#34;&gt;!&lt;/a&gt;&lt;/p&gt;
+
+&lt;h1 id=&#34;animation&#34;&gt;Animation&lt;/h1&gt;
+
+&lt;p&gt;&lt;a class=&#34;first-slide&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Hello.&lt;/p&gt;
+
+&lt;h1 id=&#34;database&#34;&gt;Database&lt;/h1&gt;
+
+&lt;p&gt;&lt;a class=&#34;database&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;columns 6:&#34;&gt;!&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;query&#34;&gt;Query&lt;/h2&gt;
+
+&lt;p&gt;&lt;textarea id=&#34;sql1&#34; rows=14&gt;&lt;/textarea&gt;
+&lt;button class=&#34;run&#34;&gt;Run&lt;/button&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;split&#34;&gt;!&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;results&#34;&gt;Results&lt;/h2&gt;
+
+&lt;div class=&#34;output&#34;&gt;&lt;/div&gt;
+
+&lt;h1 id=&#34;some-queries&#34;&gt;Some queries&lt;/h1&gt;
+
+&lt;p&gt;&lt;a class=&#34;queries&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;columns 4:&#34;&gt;!&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Consider the following two relations:&lt;/p&gt;
+
+&lt;p&gt;$T =$&lt;/p&gt;
+
+&lt;script type=sql&gt;
+SELECT * FROM T;
+&lt;/script&gt;
+
+&lt;p&gt;$S =$&lt;/p&gt;
+
+&lt;script type=sql&gt;
+SELECT * FROM S;
+&lt;/script&gt;
+
+&lt;p&gt;&lt;a href=&#34;split&#34;&gt;!&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Can you believe it?&lt;/p&gt;
+
+&lt;p&gt;$T\times S = $&lt;/p&gt;
+
+&lt;script type=sql&gt;
+SELECT * FROM T, S;
+&lt;/script&gt;
+
+&lt;p&gt;But the join is just:&lt;/p&gt;
+
+&lt;script type=sql&gt;
+SELECT * FROM T join S using (a);
+&lt;/script&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>
