@@ -1,12 +1,63 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Database Systems</title>
-    <link>https://database-k12.github.io/</link>
-    <description>Recent content on Database Systems</description>
+    <title>database-k12</title>
+    <link>https://database-k12.github.io/index.xml</link>
+    <description>Recent content on database-k12</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <atom:link href="https://database-k12.github.io/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title></title>
+      <link>https://database-k12.github.io/about</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://database-k12.github.io/about</guid>
+      <description>
+
+&lt;h1 id=&#34;database-for-k12&#34;&gt;Database for K12&lt;/h1&gt;
+
+&lt;div class=&#34;row&#34;&gt;
+    &lt;div class=&#34;col-sm-4&#34;&gt;
+        &lt;h3&gt; About the site &lt;/h3&gt;
+        &lt;p&gt;This website is dedicated to provide learning modules on the topic of
+        database and data science.&lt;/p&gt;
+    &lt;/div&gt;
+    &lt;div class=&#34;col-sm-4&#34;&gt;
+        &lt;h3&gt;About the author &lt;/h3&gt;
+        &lt;p&gt;Ken Pu, PhD&lt;br&gt;
+        &lt;a href=&#34;http://db.science.uoit.ca&#34;&gt;Associate Professor&lt;/a&gt;,&lt;br&gt;
+        &lt;a href=&#34;http://cs.science.uoit.ca&#34;&gt;Computer Science&lt;/a&gt;, 
+        &lt;a href=&#34;http://science.uoit.ca&#34;&gt;Faculty of Science&lt;/a&gt;&lt;br&gt;
+        University of Ontario Institute of Technology&lt;/p&gt;
+    &lt;/div&gt;
+    &lt;div class=&#34;col-sm-4&#34;&gt;
+        &lt;h3&gt;Follow us&lt;/h3&gt;
+        &lt;p&gt;&lt;a class=&#34;twitter-follow-button&#34; href=&#34;https://twitter.com/kenpu&#34; data-show-count=false&gt; Follow @kenpu&lt;/a&gt;&lt;/p&gt;
+        &lt;h3&gt;Email us&lt;/h3&gt;
+        &lt;p&gt;Feel free to contact us by email &lt;code&gt;ken.pu&lt;/code&gt;@&lt;i&gt;uoit.ca&lt;/i&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;script&gt;window.twttr = (function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0],
+    t = window.twttr || {};
+  if (d.getElementById(id)) return t;
+  js = d.createElement(s);
+  js.id = id;
+  js.src = &#34;https://platform.twitter.com/widgets.js&#34;;
+  fjs.parentNode.insertBefore(js, fjs);
+
+  t._e = [];
+  t.ready = function(f) {
+    t._e.push(f);
+  };
+
+  return t;
+}(document, &#34;script&#34;, &#34;twitter-wjs&#34;));&lt;/script&gt;
+</description>
+    </item>
     
     <item>
       <title></title>
@@ -18,8 +69,12 @@
             bottom: 0;
             left: 0;
             width: 100%;
+            font-family: Old Standard TT;
+            font-style: italic;
             text-align: center;&#34;&gt;
-Computer Science, Faculty of Science, UOIT &lt;span class=&#34;fa fa-copyright&#34;&gt;&lt;/span&gt;, 2017
+            Computer Science, Faculty of Science, 
+            &lt;span style=&#34;font-style: normal;&#34;&gt;UOIT&lt;/span&gt; 
+            &lt;i class=&#34;fa fa-copyright&#34;&gt;&lt;/i&gt;, 2017
 &lt;/div&gt;
 </description>
     </item>
@@ -31,7 +86,84 @@ Computer Science, Faculty of Science, UOIT &lt;span class=&#34;fa fa-copyright&#
       
       <guid>https://database-k12.github.io/header/</guid>
       <description>&lt;div&gt;
-    &lt;h1&gt;Header&lt;/h1&gt;
+    &lt;h1&gt;Database &amp; Data Science&lt;/h1&gt;
+    &lt;h2&gt;An Introduction&lt;/h2&gt;
+&lt;/div&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Data analysis with SQL queries</title>
+      <link>https://database-k12.github.io/lessons/03/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://database-k12.github.io/lessons/03/</guid>
+      <description>
+
+&lt;h1 id=&#34;data-analysis-with-sql-queries&#34;&gt;Data analysis with SQL queries&lt;/h1&gt;
+
+&lt;p&gt;&lt;a href=&#34;highlight&#34;&gt;!&lt;/a&gt;&lt;/p&gt;
+
+&lt;h1 id=&#34;tables-in-the-database&#34;&gt;Tables in the database&lt;/h1&gt;
+
+&lt;p&gt;&lt;a href=&#34;columns 6:&#34;&gt;!&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;button class=&#34;btn btn-primary&#34;
+        sql-run
+        sql-source=&#34;.sql-stores&#34;
+        sql-output=&#34;.stores&#34;&gt;Show stores&lt;/button&gt;&lt;/p&gt;
+
+&lt;div class=&#34;stores&#34; 
+  style=&#34;height: 500px; 
+  font-size: 12pt;
+  overflow: scroll&#34;&gt;&lt;/div&gt;
+
+&lt;div class=&#34;sql-stores&#34; style=&#34;display:none&#34;&gt;
+select * from stores
+&lt;/div&gt;
+
+&lt;p&gt;&lt;a href=&#34;split&#34;&gt;!&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;button class=&#34;btn btn-primary&#34;
+        sql-run
+        sql-source=&#34;.sql-countries&#34;
+        sql-output=&#34;.countries&#34;&gt;Show countries&lt;/button&gt;&lt;/p&gt;
+
+&lt;div class=&#34;countries&#34; 
+  style=&#34;height: 500px; 
+  font-size: 12pt;
+  overflow: scroll&#34;&gt;&lt;/div&gt;
+
+&lt;div class=&#34;sql-countries&#34; style=&#34;display:none&#34;&gt;
+select * from countries
+&lt;/div&gt;
+
+&lt;h1 id=&#34;toc_2&#34;&gt;______________________&lt;/h1&gt;
+
+&lt;style&gt;
+div.sql {
+    font-size: 15pt;
+    font-style: italic;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: thin dashed #aaa;
+}
+&lt;/style&gt;
+
+&lt;div class=&#34;sql&#34; 
+    contenteditable=&#34;true&#34; 
+    style=&#34;height:200px&#34;&gt;
+select count(*) from stores;&lt;br&gt;
+select count(*) from countries;&lt;br&gt;
+&lt;/div&gt;
+
+&lt;p&gt;&lt;button class=&#34;btn btn-primary&#34;
+  sql-run
+  sql-source=&#34;.sql&#34;
+  sql-output=&#34;.output&#34;&gt;Run&lt;/button&gt;&lt;/p&gt;
+
+&lt;div class=&#34;output&#34; 
+style=&#34;height: 300px; overflow:scroll; font-size:15pt&#34;&gt;
 &lt;/div&gt;
 </description>
     </item>
@@ -77,6 +209,267 @@ management from the growing financial banking industry.  &lt;a href=&#34;box&#34
 &lt;li&gt;&lt;p&gt;2009: Amazon Relational Data Service (RDS)&lt;/p&gt;&lt;/li&gt;
 
 &lt;li&gt;&lt;p&gt;2015: Google Big Table Service&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&#34;relational-database-management-systems-rdbms&#34;&gt;Relational Database Management Systems (RDBMS)&lt;/h1&gt;
+
+&lt;p&gt;&lt;a href=&#34;middle&#34;&gt;!&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;From 1974 - now (over 40 years):&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;box&#34;&gt;!&lt;/a&gt; The relational data model remains the most popular and time proven (1974 - now =
+over 40 years) data modeling framework.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;&amp;amp;&amp;amp;&amp;amp;&#34;&gt;!&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;box&#34;&gt;!&lt;/a&gt; &lt;em&gt;Structured Query Language&lt;/em&gt; (&lt;strong&gt;SQL&lt;/strong&gt;) was and still is the industry standard in
+communicating with relational databases.&lt;/p&gt;
+
+&lt;h1 id=&#34;who-are-using-rdbms&#34;&gt;Who are using RDBMS?&lt;/h1&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;Stock exchanges&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Federal governments&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Walmart and every other Fortune 500 companies&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Schools&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Every mobile phones running Android or iOS systems&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Every Chrome or Firefox browsers&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;a href=&#34;box&#34;&gt;!&lt;/a&gt; If you are reading this, most likely you are running a RDBMS right now.&lt;/p&gt;
+
+&lt;h1 id=&#34;let-s-get-started&#34;&gt;Let&amp;rsquo;s get started&lt;/h1&gt;
+
+&lt;p&gt;&lt;a href=&#34;highlight&#34;&gt;!&lt;/a&gt;&lt;/p&gt;
+
+&lt;h1 id=&#34;interacting-with-rdbms&#34;&gt;Interacting with RDBMS&lt;/h1&gt;
+
+&lt;p&gt;We will interact with a RDBMS system, known as SQLite, through your browser.&lt;/p&gt;
+
+&lt;p&gt;Issue commands to RDBMS&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;Create data&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Modify data&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Query data&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
+
+&lt;h1 id=&#34;elements-of-rdbms&#34;&gt;Elements of RDBMS&lt;/h1&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;A database&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;name of the database&lt;/li&gt;
+&lt;li&gt;a collection of tables&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;a href=&#34;box&#34;&gt;!&lt;/a&gt;
+We will use a database that is already created
+as part of this Web page.&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;A table&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;name of the table&lt;/li&gt;
+&lt;li&gt;a list of attributes&lt;/li&gt;
+&lt;li&gt;a collection of tuples&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&#34;creating-tables&#34;&gt;Creating tables&lt;/h1&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-sql&#34;&gt;CREATE TABLE &amp;lt;name&amp;gt; (
+    &amp;lt;attribute&amp;gt; &amp;lt;type&amp;gt;, ...
+);
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;blockquote&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;Specifies the attribute names and their types.&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Run multiple &lt;code&gt;CREATE TABLE&lt;/code&gt; commands to create more than one table.
+&lt;a href=&#34;note&#34;&gt;!&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;em&gt;Example:&lt;/em&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-sql&#34;&gt;CREATE TABLE cities (
+    name text,
+    population integer
+);
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h1 id=&#34;toc_8&#34;&gt;_________________________&lt;/h1&gt;
+
+&lt;h2 id=&#34;try-it-out&#34;&gt;Try it out&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&#34;columns 6:&#34;&gt;!&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;textarea style=&#34;height:300px; padding: 10px;&#34;&gt;
+CREATE TABLE knows (
+    name text,
+    friend text
+)
+&lt;/textarea&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;button 
+    class=&#34;btn btn-default&#34;
+    sql-run
+    sql-source=&#34;textarea&#34;
+    sql-dump=&#34;#output&#34;&gt;Run&lt;/button&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;split&#34;&gt;!&lt;/a&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;database&#34;&gt;Database&lt;/h3&gt;
+
+&lt;div id=&#34;output&#34;&gt;&lt;/div&gt;
+
+&lt;h1 id=&#34;delete-a-table&#34;&gt;Delete a table&lt;/h1&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-sql&#34;&gt;DROP TABLE &amp;lt;table&amp;gt;;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h1 id=&#34;toc_12&#34;&gt;__________________&lt;/h1&gt;
+
+&lt;p&gt;&lt;textarea style=&#34;height:100px; padding: 10px;&#34;&gt;
+&lt;/textarea&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;note&#34;&gt;!&lt;/a&gt; Can you delete the table created in previous slide?&lt;/p&gt;
+
+&lt;p&gt;&lt;button
+  class=&#34;btn btn-default&#34;
+  sql-run
+  sql-source=&#34;textarea&#34;
+  sql-dump=&#34;#output&#34;&gt;Run&lt;/button&gt;&lt;/p&gt;
+
+&lt;div id=&#34;output&#34;&gt;&lt;/div&gt;
+
+&lt;h1 id=&#34;creating-tuples&#34;&gt;Creating tuples&lt;/h1&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-sql&#34;&gt;INSERT INTO TABLE &amp;lt;table&amp;gt;
+VALUES (&amp;lt;tuple&amp;gt;), ... ;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;em&gt;Example&lt;/em&gt;:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-sql clipboard&#34;&gt;CREATE TABLE IF NOT EXISTS cities (name TEXT, population INTEGER);
+
+INSERT INTO cities VALUES (&#39;Toronto&#39;, 2600000), (&#39;Oshawa&#39;, 140000);
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;a href=&#34;note fragment&#34;&gt;!&lt;/a&gt; Note the &lt;code&gt;if not exists&lt;/code&gt; clause with create table.&lt;/p&gt;
+
+&lt;h1 id=&#34;try-it-out-1&#34;&gt;Try it out&lt;/h1&gt;
+
+&lt;p&gt;&lt;a href=&#34;columns 8:&#34;&gt;!&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;textarea style=&#34;height:200px; padding: 10px&#34;&gt;&lt;/textarea&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;button class=&#34;btn btn-default&#34;
+        sql-run
+        sql-source=&#34;textarea&#34;
+        sql-dump=&#34;#output&#34;&gt;Run&lt;/button&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;split&#34;&gt;!&lt;/a&gt;&lt;/p&gt;
+
+&lt;div id=&#34;output&#34;&gt;&lt;/div&gt;
+
+&lt;h1 id=&#34;selecting-tuples&#34;&gt;SELECTING Tuples&lt;/h1&gt;
+
+&lt;p&gt;What if we are only interested in some attributes of some tuples?&lt;/p&gt;
+
+&lt;p&gt;Use the &lt;em&gt;select&lt;/em&gt; statement:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-sql&#34;&gt;SELECT &amp;lt;attribute&amp;gt; ...
+FROM &amp;lt;table&amp;gt;
+WHERE &amp;lt;condition&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;em&gt;Example:&lt;/em&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-sql clipboard&#34;&gt;SELECT population FROM cities WHERE name = &#39;Toronto&#39;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h1 id=&#34;try-it-out-2&#34;&gt;Try it out:&lt;/h1&gt;
+
+&lt;p&gt;&lt;a href=&#34;columns 4:&#34;&gt;!&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;button class=&#34;btn btn-info&#34;
+        sql-run
+        sql-dump=&#34;.all&#34;&gt;Show database&lt;/button&gt;&lt;/p&gt;
+
+&lt;div class=&#34;all&#34;&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;a href=&#34;split&#34;&gt;!&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;textarea style=&#34;height:200px;padding: 10px;&#34;&gt;&lt;/textarea&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;button class=&#34;btn btn-default&#34;
+        sql-run
+        sql-source=&#34;textarea&#34;
+        sql-output=&#34;#output&#34;&gt;Run&lt;/button&gt;&lt;/p&gt;
+
+&lt;div id=&#34;output&#34;&gt;&lt;/div&gt;
+
+&lt;h1 id=&#34;deleting-tuples&#34;&gt;DELETING tuples&lt;/h1&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;Tuples can be removed from a table using the &lt;code&gt;DELETE&lt;/code&gt;
+command.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-sql&#34;&gt;DELETE FROM &amp;lt;table&amp;gt;
+WHERE &amp;lt;condition&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Example&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-sql&#34;&gt;DELETE FROM cities
+WHERE name = &#39;Oshawa&#39;
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&#34;try-it-out-3&#34;&gt;Try it out:&lt;/h1&gt;
+
+&lt;p&gt;&lt;a href=&#34;columns 6:&#34;&gt;!&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;textarea style=&#34;height: 200px; padding: 10px&#34;&gt;&lt;/textarea&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;button class=&#34;btn btn-default&#34;
+       sql-run
+       sql-source=&#34;textarea&#34;
+       sql-dump=&#34;.output&#34;&gt;Run&lt;/button&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;split&#34;&gt;!&lt;/a&gt;&lt;/p&gt;
+
+&lt;div class=&#34;output&#34;&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;button class=&#34;btn btn-info&#34; sql-run sql-dump=&#34;.output&#34;&gt;Show database&lt;/button&gt;&lt;/p&gt;
+
+&lt;h1 id=&#34;summary&#34;&gt;Summary&lt;/h1&gt;
+
+&lt;p&gt;&lt;a href=&#34;highlight&#34;&gt;!&lt;/a&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;CREATE TABLE &amp;lt;table&amp;gt; ( &amp;lt;attribute&amp;gt; &amp;lt;type&amp;gt;, ... )&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;DROP TABLE &amp;lt;table&amp;gt;&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;INSERT INTO &amp;lt;table&amp;gt; VALUES (...), ...&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;SELECT &amp;lt;attribute&amp;gt;, ... FROM &amp;lt;table&amp;gt; WHERE &amp;lt;condition&amp;gt;&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;DELETE FROM &amp;lt;table&amp;gt; WHERE &amp;lt;condition&amp;gt;&lt;/code&gt;&lt;/li&gt;
 &lt;/ul&gt;
 </description>
     </item>
@@ -128,12 +521,12 @@ for inclusion in the Astronomiae instauratae progymnasmata.&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&#34;ebola-2015.jpg&#34;&gt;&lt;/img&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&#34;note&#34;&gt;!&lt;/a&gt; Tracking cases at the Liberian Ministry of Health and Social Welfare.
+&lt;p&gt;&lt;a href=&#34;note fragment&#34;&gt;!&lt;/a&gt; Tracking cases at the Liberian Ministry of Health and Social Welfare.
 &lt;a href=&#34;http://motherboard.vice.com/read/ebolas-paper-trail&#34;&gt;Original source&lt;/a&gt;&lt;/p&gt;
 
 &lt;h1 id=&#34;what-s-in-common&#34;&gt;What&amp;rsquo;s in common?&lt;/h1&gt;
 
-&lt;p&gt;&lt;center style=&#34;margin-top: 150px&#34;&gt;
+&lt;p&gt;&lt;center style=&#34;margin-top: 150px; font-size: 200%&#34;&gt;
 Tabular layout
 &lt;/center&gt;&lt;/p&gt;
 
@@ -197,14 +590,13 @@ Tabular layout
 
 &lt;p&gt;&lt;em&gt;Some definitions:&lt;/em&gt;&lt;/p&gt;
 
-&lt;blockquote&gt;
 &lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;fragments&#34;&gt;!&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;Table (relation)&lt;/li&gt;
 &lt;li&gt;Attributes (columns)&lt;/li&gt;
 &lt;li&gt;Tuples (rows)&lt;/li&gt;
 &lt;li&gt;Values (cell)&lt;/li&gt;
 &lt;/ul&gt;
-&lt;/blockquote&gt;
 
 &lt;h1 id=&#34;table&#34;&gt;Table&lt;/h1&gt;
 
@@ -333,44 +725,94 @@ Tabular layout
 
 &lt;p&gt;&lt;a href=&#34;split&#34;&gt;!&lt;/a&gt;&lt;/p&gt;
 
-&lt;p&gt;Here are two tuples:&lt;/p&gt;
+&lt;p&gt;Two tuples&lt;/p&gt;
 
-&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;The first tuple has three attributes, and their respective data values.&lt;/p&gt;&lt;/li&gt;
+&lt;h1 id=&#34;toc_12&#34;&gt;_____________________________________&lt;/h1&gt;
 
-&lt;li&gt;&lt;p&gt;The second tuple also has the same three attributes, but different data
-values.  Also the second tuple has a &lt;em&gt;missing&lt;/em&gt; value.&lt;/p&gt;&lt;/li&gt;
-&lt;/ul&gt;
+&lt;p&gt;&lt;a href=&#34;columns 6:&#34;&gt;!&lt;/a&gt;&lt;/p&gt;
 
-&lt;h1 id=&#34;data-representation&#34;&gt;Data Representation&lt;/h1&gt;
+&lt;table&gt;
+    &lt;thead&gt;
+    &lt;tr&gt;
+        &lt;th&gt;City&lt;/th&gt;
+        &lt;th&gt;Province&lt;/th&gt;
+        &lt;th&gt;Population&lt;/th&gt;
+    &lt;/tr&gt;
+    &lt;/thead&gt;
+    &lt;tr style=background:#a6a&gt;
+        &lt;td&gt;Paris&lt;/td&gt;
+        &lt;td&gt;Ontario&lt;/td&gt;
+        &lt;td&gt;11,000&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr style=&#34;background: #afa; opacity: 0.1&#34;&gt;
+        &lt;td&gt;Brooklin&lt;/td&gt;
+        &lt;td&gt;Ontario&lt;/td&gt;
+        &lt;td&gt;NULL&lt;/td&gt;
+    &lt;/tr&gt;
+&lt;/table&gt;
 
-&lt;p&gt;&lt;a href=&#34;highlight&#34;&gt;!&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;split&#34;&gt;!&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;This tuple has three values.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;note 6&#34;&gt;!&lt;/a&gt; Can it have four values?&lt;/p&gt;
+
+&lt;h1 id=&#34;toc_13&#34;&gt;_____________________________________&lt;/h1&gt;
+
+&lt;p&gt;&lt;a href=&#34;columns 6:&#34;&gt;!&lt;/a&gt;&lt;/p&gt;
+
+&lt;table&gt;
+    &lt;thead&gt;
+    &lt;tr&gt;
+        &lt;th&gt;City&lt;/th&gt;
+        &lt;th&gt;Province&lt;/th&gt;
+        &lt;th&gt;Population&lt;/th&gt;
+    &lt;/tr&gt;
+    &lt;/thead&gt;
+    &lt;tr style=background:#a6a;opacity:0.2&gt;
+        &lt;td&gt;Paris&lt;/td&gt;
+        &lt;td&gt;Ontario&lt;/td&gt;
+        &lt;td&gt;11,000&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr style=&#34;background: #afa&#34;&gt;
+        &lt;td&gt;Brooklin&lt;/td&gt;
+        &lt;td&gt;Ontario&lt;/td&gt;
+        &lt;td&gt;NULL&lt;/td&gt;
+    &lt;/tr&gt;
+&lt;/table&gt;
+
+&lt;p&gt;&lt;a href=&#34;split&#34;&gt;!&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;This tuple has two values, as the value for the attribute &lt;strong&gt;population&lt;/strong&gt; is
+&lt;em&gt;missing&lt;/em&gt;.&lt;/p&gt;
 
 &lt;h1 id=&#34;data-modeling&#34;&gt;Data Modeling&lt;/h1&gt;
 
-&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;Data in a specific domain&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;highlight&#34;&gt;!&lt;/a&gt;&lt;/p&gt;
 
-&lt;blockquote&gt;
+&lt;h1 id=&#34;data-modeling-1&#34;&gt;Data Modeling&lt;/h1&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;Data in real-life scenarios:&lt;/p&gt;
+
 &lt;p&gt;For example:&lt;/p&gt;
 
+&lt;blockquote&gt;
 &lt;ol&gt;
 &lt;li&gt;Student records&lt;/li&gt;
 &lt;li&gt;Google map&lt;/li&gt;
 &lt;li&gt;Network traffic&lt;/li&gt;
 &lt;/ol&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;This data is not in any particular form. &lt;a href=&#34;box&#34;&gt;!&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;Design the &lt;em&gt;layout&lt;/em&gt; of one or more &lt;em&gt;tables&lt;/em&gt; to store the domain specific data.&lt;/p&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;The data must be stored in a lossless form.&lt;/p&gt;
-
-&lt;p&gt;This is &lt;strong&gt;data modeling&lt;/strong&gt;.&lt;/p&gt;
 &lt;/blockquote&gt;&lt;/li&gt;
 &lt;/ul&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;&lt;a href=&#34;box fragment&#34;&gt;!&lt;/a&gt;
+&lt;em&gt;Data Modeling&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;The data must be stored in a lossless form.  Designing the layout and storage
+of data based on the real-life scenario is called &lt;em&gt;data modeling&lt;/em&gt;.&lt;/p&gt;
+&lt;/blockquote&gt;
 
 &lt;h1 id=&#34;case-study-a-social-graph-as-tables&#34;&gt;Case study: a social graph as tables&lt;/h1&gt;
 
@@ -384,7 +826,7 @@ values.  Also the second tuple has a &lt;em&gt;missing&lt;/em&gt; value.&lt;/p&g
 
 &lt;p&gt;How do we encode this as one or more tables?&lt;/p&gt;
 
-&lt;h1 id=&#34;toc_15&#34;&gt;___________________&lt;/h1&gt;
+&lt;h1 id=&#34;toc_17&#34;&gt;___________________&lt;/h1&gt;
 
 &lt;p&gt;&lt;a href=&#34;columns 6:&#34;&gt;!&lt;/a&gt;&lt;/p&gt;
 
@@ -427,7 +869,7 @@ values.  Also the second tuple has a &lt;em&gt;missing&lt;/em&gt; value.&lt;/p&g
 
 &lt;p&gt;It&amp;rsquo;s important to note that this is a &lt;em&gt;lossless&lt;/em&gt; encoding of the social graph.&lt;/p&gt;
 
-&lt;h1 id=&#34;toc_16&#34;&gt;________________________&lt;/h1&gt;
+&lt;h1 id=&#34;toc_18&#34;&gt;________________________&lt;/h1&gt;
 
 &lt;p&gt;&lt;a href=&#34;columns 8:&#34;&gt;!&lt;/a&gt;&lt;/p&gt;
 
@@ -437,7 +879,9 @@ values.  Also the second tuple has a &lt;em&gt;missing&lt;/em&gt; value.&lt;/p&g
 
 &lt;p&gt;How do we model the additional information of the augmented social graph?&lt;/p&gt;
 
-&lt;h1 id=&#34;toc_17&#34;&gt;___________________________&lt;/h1&gt;
+&lt;h1 id=&#34;toc_19&#34;&gt;___________________________&lt;/h1&gt;
+
+&lt;p&gt;&lt;a href=&#34;scale 0.9&#34;&gt;!&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;a href=&#34;columns 5:&#34;&gt;!&lt;/a&gt;&lt;/p&gt;
 
@@ -446,6 +890,8 @@ values.  Also the second tuple has a &lt;em&gt;missing&lt;/em&gt; value.&lt;/p&g
 &lt;p&gt;&lt;a href=&#34;split&#34;&gt;!&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;Use more tables &lt;a href=&#34;box&#34;&gt;!&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Table: &lt;em&gt;Knows&lt;/em&gt;&lt;/p&gt;
 
 &lt;table&gt;
 &lt;thead&gt;
@@ -477,6 +923,8 @@ values.  Also the second tuple has a &lt;em&gt;missing&lt;/em&gt; value.&lt;/p&g
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
+
+&lt;p&gt;Table: &lt;em&gt;Position&lt;/em&gt;&lt;/p&gt;
 
 &lt;table&gt;
 &lt;thead&gt;
@@ -514,11 +962,13 @@ values.  Also the second tuple has a &lt;em&gt;missing&lt;/em&gt; value.&lt;/p&g
 &lt;/tbody&gt;
 &lt;/table&gt;
 
-&lt;h1 id=&#34;toc_18&#34;&gt;___________________________&lt;/h1&gt;
+&lt;h1 id=&#34;toc_20&#34;&gt;___________________________&lt;/h1&gt;
 
 &lt;p&gt;What if we use one table? &lt;a href=&#34;box&#34;&gt;!&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;a href=&#34;columns 7:&#34;&gt;!&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Table: &lt;em&gt;Knows-and-position&lt;/em&gt;&lt;/p&gt;
 
 &lt;table&gt;
 &lt;thead&gt;
@@ -533,8 +983,8 @@ values.  Also the second tuple has a &lt;em&gt;missing&lt;/em&gt; value.&lt;/p&g
 &lt;tbody&gt;
 &lt;tr&gt;
 &lt;td&gt;Steve Jobs&lt;/td&gt;
-&lt;td&gt;CEO&lt;/td&gt;
-&lt;td&gt;Apple&lt;/td&gt;
+&lt;td&gt;&lt;red&gt;CEO&lt;/red&gt;&lt;/td&gt;
+&lt;td&gt;&lt;red&gt;Apple&lt;/red&gt;&lt;/td&gt;
 &lt;td&gt;Marissa Mayer&lt;/td&gt;
 &lt;/tr&gt;
 
@@ -547,15 +997,15 @@ values.  Also the second tuple has a &lt;em&gt;missing&lt;/em&gt; value.&lt;/p&g
 
 &lt;tr&gt;
 &lt;td&gt;Bill Gates&lt;/td&gt;
-&lt;td&gt;Chairman&lt;/td&gt;
-&lt;td&gt;Microsoft&lt;/td&gt;
+&lt;td&gt;&lt;blue&gt;Chairman&lt;/blue&gt;&lt;/td&gt;
+&lt;td&gt;&lt;blue&gt;Microsoft&lt;/blue&gt;&lt;/td&gt;
 &lt;td&gt;Marissa Mayer&lt;/td&gt;
 &lt;/tr&gt;
 
 &lt;tr&gt;
 &lt;td&gt;Bill Gates&lt;/td&gt;
-&lt;td&gt;&lt;red&gt;Chairman&lt;/red&gt;&lt;/td&gt;
-&lt;td&gt;&lt;red&gt;Microsoft&lt;/red&gt;&lt;/td&gt;
+&lt;td&gt;&lt;blue&gt;Chairman&lt;/blue&gt;&lt;/td&gt;
+&lt;td&gt;&lt;blue&gt;Microsoft&lt;/blue&gt;&lt;/td&gt;
 &lt;td&gt;Bill Joy&lt;/td&gt;
 &lt;/tr&gt;
 
@@ -586,14 +1036,32 @@ times just because &lt;code&gt;Steve Jobs&lt;/code&gt; knows lots of people.&lt;
 &lt;li&gt;&lt;p&gt;&lt;blue&gt;NULL&lt;/blue&gt; values are used for &lt;code&gt;Marissa Mayer&lt;/code&gt; and &lt;code&gt;Bill Joy&lt;/code&gt;.&lt;/p&gt;&lt;/li&gt;
 &lt;/ol&gt;
 
-&lt;h1 id=&#34;data-modeling-1&#34;&gt;Data modeling&lt;/h1&gt;
+&lt;h1 id=&#34;toc_21&#34;&gt;_______________________________&lt;/h1&gt;
 
-&lt;p&gt;In this course, we will explore the theory and best practices of data modeling
-with tables.&lt;/p&gt;
+&lt;p&gt;Let&amp;rsquo;s summarize the data model:&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&#34;***&#34;&gt;!&lt;/a&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;comfortable&#34;&gt;!&lt;/a&gt;&lt;/li&gt;
 
-&lt;p&gt;(A lot) more on this in the coming weeks.&lt;/p&gt;
+&lt;li&gt;&lt;p&gt;We will use two tables.&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Table &lt;em&gt;Knows&lt;/em&gt; will have two attributes:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;person: text&lt;/li&gt;
+&lt;li&gt;knows: text&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Table &lt;em&gt;Position&lt;/em&gt; will have three attributes:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;person: text&lt;/li&gt;
+&lt;li&gt;position: text&lt;/li&gt;
+&lt;li&gt;company: text&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
 
 &lt;h1 id=&#34;summary&#34;&gt;Summary&lt;/h1&gt;
 
@@ -610,110 +1078,6 @@ with tables.&lt;/p&gt;
 
 &lt;li&gt;&lt;p&gt;Data modeling&lt;/p&gt;&lt;/li&gt;
 &lt;/ul&gt;
-
-&lt;h1 id=&#34;what-s-to-come&#34;&gt;What&amp;rsquo;s to come.&lt;/h1&gt;
-
-&lt;p&gt;&lt;a href=&#34;highlight&#34;&gt;!&lt;/a&gt;&lt;/p&gt;
-
-&lt;h1 id=&#34;relational-data-model&#34;&gt;Relational data model&lt;/h1&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;Table schema and table instances&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;Constraints to maintain data integrity&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;Relational databases and expressing relational data in Structured Query
-Language (SQL)&lt;/p&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h1 id=&#34;data-analysis-using-sql&#34;&gt;Data Analysis using SQL&lt;/h1&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;Theory of relational algebra and SQL&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;Aggregration and complex SQL&lt;/p&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h1 id=&#34;programming-interface-to-databases&#34;&gt;Programming interface to databases&lt;/h1&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;Python application programming interface (API)&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;Case studies of database API&lt;/p&gt;&lt;/li&gt;
-&lt;/ul&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Testing experimental features</title>
-      <link>https://database-k12.github.io/lessons/sandbox/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://database-k12.github.io/lessons/sandbox/</guid>
-      <description>
-
-&lt;h1 id=&#34;experimental-features&#34;&gt;Experimental features&lt;/h1&gt;
-
-&lt;p&gt;&lt;a href=&#34;highlight&#34;&gt;!&lt;/a&gt;&lt;/p&gt;
-
-&lt;h1 id=&#34;animation&#34;&gt;Animation&lt;/h1&gt;
-
-&lt;p&gt;&lt;a class=&#34;first-slide&#34;&gt;&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;Hello.&lt;/p&gt;
-
-&lt;h1 id=&#34;database&#34;&gt;Database&lt;/h1&gt;
-
-&lt;p&gt;&lt;a class=&#34;database&#34;&gt;&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;columns 6:&#34;&gt;!&lt;/a&gt;&lt;/p&gt;
-
-&lt;h2 id=&#34;query&#34;&gt;Query&lt;/h2&gt;
-
-&lt;p&gt;&lt;textarea id=&#34;sql1&#34; rows=14&gt;&lt;/textarea&gt;
-&lt;button class=&#34;run&#34;&gt;Run&lt;/button&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;split&#34;&gt;!&lt;/a&gt;&lt;/p&gt;
-
-&lt;h2 id=&#34;results&#34;&gt;Results&lt;/h2&gt;
-
-&lt;div class=&#34;output&#34;&gt;&lt;/div&gt;
-
-&lt;h1 id=&#34;some-queries&#34;&gt;Some queries&lt;/h1&gt;
-
-&lt;p&gt;&lt;a class=&#34;queries&#34;&gt;&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;columns 4:&#34;&gt;!&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;Consider the following two relations:&lt;/p&gt;
-
-&lt;p&gt;$T =$&lt;/p&gt;
-
-&lt;script type=sql&gt;
-SELECT * FROM T;
-&lt;/script&gt;
-
-&lt;p&gt;$S =$&lt;/p&gt;
-
-&lt;script type=sql&gt;
-SELECT * FROM S;
-&lt;/script&gt;
-
-&lt;p&gt;&lt;a href=&#34;split&#34;&gt;!&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;Can you believe it?&lt;/p&gt;
-
-&lt;p&gt;$T\times S = $&lt;/p&gt;
-
-&lt;script type=sql&gt;
-SELECT * FROM T, S;
-&lt;/script&gt;
-
-&lt;p&gt;But the join is just:&lt;/p&gt;
-
-&lt;script type=sql&gt;
-SELECT * FROM T join S using (a);
-&lt;/script&gt;
 </description>
     </item>
     

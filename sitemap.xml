@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://database-k12.github.io/</loc>
+    <loc>https://database-k12.github.io/about</loc>
   </url>
   
   <url>
@@ -14,6 +14,25 @@
   </url>
   
   <url>
+    <loc>https://database-k12.github.io/categories/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://database-k12.github.io/lessons/03/</loc>
+  </url>
+  
+  <url>
+    <loc>https://database-k12.github.io/categories/database/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://database-k12.github.io/lessons/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://database-k12.github.io/lessons/02/</loc>
   </url>
   
@@ -22,7 +41,8 @@
   </url>
   
   <url>
-    <loc>https://database-k12.github.io/lessons/sandbox/</loc>
+    <loc>https://database-k12.github.io/</loc>
+    <priority>0</priority>
   </url>
   
 </urlset>

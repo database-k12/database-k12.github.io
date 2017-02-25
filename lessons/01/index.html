@@ -1,13 +1,17 @@
+
 <!doctype html>
 <html>
 	<head>
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-        <title>Tables everywhere</title>
+        <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>Tables everywhere</title>
 
-        <link rel="stylesheet" href="https://database-k12.github.io//css/bootstrap.css">
-        <link rel="stylesheet" href="https://database-k12.github.io//css/fonts/fonts.css">
-        <link rel="stylesheet" href="https://database-k12.github.io//css/font-awesome/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://database-k12.github.io//css/bootstrap.css">
+<link rel="stylesheet" href="https://database-k12.github.io//css/sweetalert.css">
+<link rel="stylesheet" href="https://database-k12.github.io//css/fonts/fonts.css">
+<link rel="stylesheet" href="https://database-k12.github.io//css/font-awesome/css/font-awesome.min.css">
+
+
         <link rel="stylesheet" href="https://database-k12.github.io//reveal.js/css/reveal.css">
         <link rel="stylesheet" href="https://database-k12.github.io//reveal.js/css/theme/white.css">
 
@@ -76,12 +80,12 @@ for inclusion in the Astronomiae instauratae progymnasmata.</p>
 
 <p><img src="ebola-2015.jpg"></img></p>
 
-<p><a href="note">!</a> Tracking cases at the Liberian Ministry of Health and Social Welfare.
+<p><a href="note fragment">!</a> Tracking cases at the Liberian Ministry of Health and Social Welfare.
 <a href="http://motherboard.vice.com/read/ebolas-paper-trail">Original source</a></p>
 
 <h1 id="what-s-in-common">What&rsquo;s in common?</h1>
 
-<p><center style="margin-top: 150px">
+<p><center style="margin-top: 150px; font-size: 200%">
 Tabular layout
 </center></p>
 
@@ -145,14 +149,13 @@ Tabular layout
 
 <p><em>Some definitions:</em></p>
 
-<blockquote>
 <ul>
+<li><a href="fragments">!</a></li>
 <li>Table (relation)</li>
 <li>Attributes (columns)</li>
 <li>Tuples (rows)</li>
 <li>Values (cell)</li>
 </ul>
-</blockquote>
 
 <h1 id="table">Table</h1>
 
@@ -281,44 +284,94 @@ Tabular layout
 
 <p><a href="split">!</a></p>
 
-<p>Here are two tuples:</p>
+<p>Two tuples</p>
 
-<ul>
-<li><p>The first tuple has three attributes, and their respective data values.</p></li>
+<h1 id="toc_12">_____________________________________</h1>
 
-<li><p>The second tuple also has the same three attributes, but different data
-values.  Also the second tuple has a <em>missing</em> value.</p></li>
-</ul>
+<p><a href="columns 6:">!</a></p>
 
-<h1 id="data-representation">Data Representation</h1>
+<table>
+    <thead>
+    <tr>
+        <th>City</th>
+        <th>Province</th>
+        <th>Population</th>
+    </tr>
+    </thead>
+    <tr style=background:#a6a>
+        <td>Paris</td>
+        <td>Ontario</td>
+        <td>11,000</td>
+    </tr>
+    <tr style="background: #afa; opacity: 0.1">
+        <td>Brooklin</td>
+        <td>Ontario</td>
+        <td>NULL</td>
+    </tr>
+</table>
 
-<p><a href="highlight">!</a></p>
+<p><a href="split">!</a></p>
+
+<p>This tuple has three values.</p>
+
+<p><a href="note 6">!</a> Can it have four values?</p>
+
+<h1 id="toc_13">_____________________________________</h1>
+
+<p><a href="columns 6:">!</a></p>
+
+<table>
+    <thead>
+    <tr>
+        <th>City</th>
+        <th>Province</th>
+        <th>Population</th>
+    </tr>
+    </thead>
+    <tr style=background:#a6a;opacity:0.2>
+        <td>Paris</td>
+        <td>Ontario</td>
+        <td>11,000</td>
+    </tr>
+    <tr style="background: #afa">
+        <td>Brooklin</td>
+        <td>Ontario</td>
+        <td>NULL</td>
+    </tr>
+</table>
+
+<p><a href="split">!</a></p>
+
+<p>This tuple has two values, as the value for the attribute <strong>population</strong> is
+<em>missing</em>.</p>
 
 <h1 id="data-modeling">Data Modeling</h1>
 
-<ul>
-<li><p>Data in a specific domain</p>
+<p><a href="highlight">!</a></p>
 
-<blockquote>
+<h1 id="data-modeling-1">Data Modeling</h1>
+
+<ul>
+<li><p>Data in real-life scenarios:</p>
+
 <p>For example:</p>
 
+<blockquote>
 <ol>
 <li>Student records</li>
 <li>Google map</li>
 <li>Network traffic</li>
 </ol>
-</blockquote>
-
-<p>This data is not in any particular form. <a href="box">!</a></p></li>
-
-<li><p>Design the <em>layout</em> of one or more <em>tables</em> to store the domain specific data.</p>
-
-<blockquote>
-<p>The data must be stored in a lossless form.</p>
-
-<p>This is <strong>data modeling</strong>.</p>
 </blockquote></li>
 </ul>
+
+<blockquote>
+<p><a href="box fragment">!</a>
+<em>Data Modeling</em></p>
+
+<p>The data must be stored in a lossless form.  Designing the layout and storage
+of data based on the real-life scenario is called <em>data modeling</em>.</p>
+</blockquote>
 
 <h1 id="case-study-a-social-graph-as-tables">Case study: a social graph as tables</h1>
 
@@ -332,7 +385,7 @@ values.  Also the second tuple has a <em>missing</em> value.</p></li>
 
 <p>How do we encode this as one or more tables?</p>
 
-<h1 id="toc_15">___________________</h1>
+<h1 id="toc_17">___________________</h1>
 
 <p><a href="columns 6:">!</a></p>
 
@@ -375,7 +428,7 @@ values.  Also the second tuple has a <em>missing</em> value.</p></li>
 
 <p>It&rsquo;s important to note that this is a <em>lossless</em> encoding of the social graph.</p>
 
-<h1 id="toc_16">________________________</h1>
+<h1 id="toc_18">________________________</h1>
 
 <p><a href="columns 8:">!</a></p>
 
@@ -385,7 +438,9 @@ values.  Also the second tuple has a <em>missing</em> value.</p></li>
 
 <p>How do we model the additional information of the augmented social graph?</p>
 
-<h1 id="toc_17">___________________________</h1>
+<h1 id="toc_19">___________________________</h1>
+
+<p><a href="scale 0.9">!</a></p>
 
 <p><a href="columns 5:">!</a></p>
 
@@ -394,6 +449,8 @@ values.  Also the second tuple has a <em>missing</em> value.</p></li>
 <p><a href="split">!</a></p>
 
 <p>Use more tables <a href="box">!</a></p>
+
+<p>Table: <em>Knows</em></p>
 
 <table>
 <thead>
@@ -425,6 +482,8 @@ values.  Also the second tuple has a <em>missing</em> value.</p></li>
 </tr>
 </tbody>
 </table>
+
+<p>Table: <em>Position</em></p>
 
 <table>
 <thead>
@@ -462,11 +521,13 @@ values.  Also the second tuple has a <em>missing</em> value.</p></li>
 </tbody>
 </table>
 
-<h1 id="toc_18">___________________________</h1>
+<h1 id="toc_20">___________________________</h1>
 
 <p>What if we use one table? <a href="box">!</a></p>
 
 <p><a href="columns 7:">!</a></p>
+
+<p>Table: <em>Knows-and-position</em></p>
 
 <table>
 <thead>
@@ -481,8 +542,8 @@ values.  Also the second tuple has a <em>missing</em> value.</p></li>
 <tbody>
 <tr>
 <td>Steve Jobs</td>
-<td>CEO</td>
-<td>Apple</td>
+<td><red>CEO</red></td>
+<td><red>Apple</red></td>
 <td>Marissa Mayer</td>
 </tr>
 
@@ -495,15 +556,15 @@ values.  Also the second tuple has a <em>missing</em> value.</p></li>
 
 <tr>
 <td>Bill Gates</td>
-<td>Chairman</td>
-<td>Microsoft</td>
+<td><blue>Chairman</blue></td>
+<td><blue>Microsoft</blue></td>
 <td>Marissa Mayer</td>
 </tr>
 
 <tr>
 <td>Bill Gates</td>
-<td><red>Chairman</red></td>
-<td><red>Microsoft</red></td>
+<td><blue>Chairman</blue></td>
+<td><blue>Microsoft</blue></td>
 <td>Bill Joy</td>
 </tr>
 
@@ -534,14 +595,32 @@ times just because <code>Steve Jobs</code> knows lots of people.</p></li>
 <li><p><blue>NULL</blue> values are used for <code>Marissa Mayer</code> and <code>Bill Joy</code>.</p></li>
 </ol>
 
-<h1 id="data-modeling-1">Data modeling</h1>
+<h1 id="toc_21">_______________________________</h1>
 
-<p>In this course, we will explore the theory and best practices of data modeling
-with tables.</p>
+<p>Let&rsquo;s summarize the data model:</p>
 
-<p><a href="***">!</a></p>
+<blockquote>
+<ul>
+<li><a href="comfortable">!</a></li>
 
-<p>(A lot) more on this in the coming weeks.</p>
+<li><p>We will use two tables.</p></li>
+
+<li><p>Table <em>Knows</em> will have two attributes:</p>
+
+<ul>
+<li>person: text</li>
+<li>knows: text</li>
+</ul></li>
+
+<li><p>Table <em>Position</em> will have three attributes:</p>
+
+<ul>
+<li>person: text</li>
+<li>position: text</li>
+<li>company: text</li>
+</ul></li>
+</ul>
+</blockquote>
 
 <h1 id="summary">Summary</h1>
 
@@ -558,40 +637,10 @@ with tables.</p>
 
 <li><p>Data modeling</p></li>
 </ul>
-
-<h1 id="what-s-to-come">What&rsquo;s to come.</h1>
-
-<p><a href="highlight">!</a></p>
-
-<h1 id="relational-data-model">Relational data model</h1>
-
-<ul>
-<li><p>Table schema and table instances</p></li>
-
-<li><p>Constraints to maintain data integrity</p></li>
-
-<li><p>Relational databases and expressing relational data in Structured Query
-Language (SQL)</p></li>
-</ul>
-
-<h1 id="data-analysis-using-sql">Data Analysis using SQL</h1>
-
-<ul>
-<li><p>Theory of relational algebra and SQL</p></li>
-
-<li><p>Aggregration and complex SQL</p></li>
-</ul>
-
-<h1 id="programming-interface-to-databases">Programming interface to databases</h1>
-
-<ul>
-<li><p>Python application programming interface (API)</p></li>
-
-<li><p>Case studies of database API</p></li>
-</ul>
 </div>
         </div>
         <div class="footnote" style="position: fixed; 
+            z-index: 2000;
             bottom:0; 
             left:0;
             padding: 10px;
@@ -605,13 +654,27 @@ Language (SQL)</p></li>
                 <a href="?print-pdf" class="btn btn-default cmd" style="color:red">
                     <i class="fa fa-file-pdf-o"></i>
                 </a>
-                <a href="../.." class="btn btn-default" 
+                <a href=".." class="btn btn-default" 
                     style="font-family:'Old Standard TT'; font-style:italic">
-                    <i lass="fa fa-angle-left"></i> home </a>
+                    <i lass="fa fa-angle-left"></i> back </a>
             </div>
         </div>
+        
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
 
-        <script src="https://database-k12.github.io//js/jquery-2.2.1.min.js"></script>
+  ga('create', 'UA-52618243-3', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+
+<script src="https://database-k12.github.io//js/jquery-2.2.1.min.js"></script>
+<script src="https://database-k12.github.io//js/sweetalert.min.js"></script>
+
         <script src="https://database-k12.github.io//js/masonry.pkgd.min.js"></script>
         <script src="https://database-k12.github.io//js/pdf.js"></script>
         <script src="https://database-k12.github.io//js/clipboard.min.js"></script>
@@ -781,19 +844,8 @@ Language (SQL)</p></li>
             }
         }
 		</script>
-        
-<script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-
-  ga('create', 'UA-52618243-3', 'auto');
-  ga('send', 'pageview');
-
-</script>
-
-
 	</body>
 </html>
+
+
 

@@ -1,64 +1,71 @@
 <html>
     <head>
-	<meta name="generator" content="Hugo 0.16" />
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="https://database-k12.github.io//css/style.css">
-        <link rel="stylesheet" href="https://database-k12.github.io//style.css">
+	<meta name="generator" content="Hugo 0.18.1" />
+        <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title></title>
+
+<link rel="stylesheet" href="/css/bootstrap.css">
+<link rel="stylesheet" href="/css/sweetalert.css">
+<link rel="stylesheet" href="/css/fonts/fonts.css">
+<link rel="stylesheet" href="/css/font-awesome/css/font-awesome.min.css">
+
+
+        <style>
+            .typed-cursor {
+                font-weight: bold;
+                color: crimson;
+            }
+        </style>
     </head>
     <body>
-        <div class="container" type="index">
+        <nav class="navbar navbar-default navbar-fixed-top hidden-xs">
+  <div class="container-fluid">
+    
+    <div class="navbar-header">
+      <a class="navbar-brand" href="https://database-k12.github.io/" style="color: crimson">
+          <i class="fa fa-bar-chart"></i>
+          <span style="font-family: ETBembo; font-style: italic; margin-left: 10px">database-k12</span>
+      </a>
+    </div>
 
-            
-            <div class="header">
-                
-                <div><div>
-    <h1>Header</h1>
-</div>
-</div>
-                
-            </div>
+    <ul class="nav navbar-nav pull-right">
+        <li><a href="https://database-k12.github.io/lessons">Lessons</a></li>
+        <li><a href="https://database-k12.github.io/about">About Us</a></li>
+    </ul>
+  </div>
+</nav>
 
-            
-            <div class=lessons>
-                <ol>
-                
-                
-                <li class=lesson>
-                    <a href="https://database-k12.github.io/lessons/01/">
-                        <span class="title">Tables everywhere</span>
-                    </a>
-                </li>
-                
-                
-                <li class=lesson>
-                    <a href="https://database-k12.github.io/lessons/02/">
-                        <span class="title">Relational Databases</span>
-                    </a>
-                </li>
-                
-                
-                <li class=lesson>
-                    <a href="https://database-k12.github.io/lessons/sandbox/">
-                        <span class="title">Testing experimental features</span>
-                    </a>
-                </li>
-                
-            </ol>
-            </div>
+<style>
+a.navbar-brand {
+    opacity: 0.6;
+}
+a.navbar-brand:hover {
+    opacity: 1.0;
+}
+</style>
 
-            
-            <div class="footer">
-                
-                <div><div style="position: fixed;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            text-align: center;">
-Computer Science, Faculty of Science, UOIT <span class="fa fa-copyright"></span>, 2017
-</div>
-</div>
-                
-            </div>
+        <div id="particles" 
+            style="position: fixed;
+                   width: 100%;
+                   height: 100%;
+                   left: 0;
+                   top: 0;
+                   z-index: -1;">
+        </div>
+        <div style="position: fixed;
+                   width: 100%;
+                   height: 100%;
+                   left: 0;
+                   top: 0;
+                   display: flex;
+                   align-items: center;
+                   justify-content: center;
+                   font-size: 200%;
+                   font-family: Roboto;
+                   font-weight: 200;">
+            <a href="lessons"
+                class="intro">Start</a>
         </div>
         
 <script>
@@ -73,5 +80,96 @@ Computer Science, Faculty of Science, UOIT <span class="fa fa-copyright"></span>
 </script>
 
 
+<script src="https://database-k12.github.io//js/jquery-2.2.1.min.js"></script>
+<script src="https://database-k12.github.io//js/sweetalert.min.js"></script>
+
+        <script src="https://database-k12.github.io//js/particles.min.js"></script>
+        <script>
+            var particles = {
+                "particles": {
+                  "number": {
+                    "value": 80,
+                    "density": {
+                      "enable": true,
+                      "value_area": 800
+                    }
+                  },
+                  "color": {
+                    "value": "#a00"
+                  },
+                  "shape": {
+                    "type": "circle",
+                    "stroke": {
+                      "width": 0,
+                      "color": "#000000"
+                    },
+                    "polygon": {
+                      "nb_sides": 5
+                    },
+                    "image": {
+                      "src": "img/github.svg",
+                      "width": 100,
+                      "height": 100
+                    }
+                  },
+                  "opacity": {
+                    "value": 0.5,
+                    "random": false,
+                    "anim": {
+                      "enable": false,
+                      "speed": 1,
+                      "opacity_min": 0.1,
+                      "sync": false
+                    }
+                  },
+                  "size": {
+                    "value": 5,
+                    "random": true,
+                    "anim": {
+                      "enable": false,
+                      "speed": 40,
+                      "size_min": 0.1,
+                      "sync": false
+                    }
+                  },
+                  "line_linked": {
+                    "enable": true,
+                    "distance": 150,
+                    "color": "#aaa",
+                    "opacity": 0.4,
+                    "width": 1
+                  },
+                  "move": {
+                    "enable": true,
+                    "speed": 6,
+                    "direction": "none",
+                    "random": false,
+                    "straight": false,
+                    "out_mode": "out",
+                    "attract": {
+                      "enable": false,
+                      "rotateX": 600,
+                      "rotateY": 1200
+                    }
+                  }
+                },
+                "retina_detect": true,
+                "config_demo": {
+                  "hide_card": false,
+                  "background_color": "#b61924",
+                  "background_image": "",
+                  "background_position": "50% 50%",
+                  "background_repeat": "no-repeat",
+                  "background_size": "cover"
+                }
+            };
+            window.particlesJS("particles", particles);
+        </script>
+        <script src="https://database-k12.github.io//js/typed.min.js"></script>
+        <script>
+            $(".intro").typed({
+                strings: ["Get Started, <strong>now</strong>..."],
+            });
+        </script>
     </body>
 </html>

@@ -1,101 +1,144 @@
-(function(window) {
-// evaluate embedded SQL scripts to data tables
-// in a specific slide
+(function() {
+    // ==================================
+    // Render results
+    // ==================================
+    function renderResult(out, result, append) {
+        if(! append) out.empty();
 
-function evalSQLScript(db, $script, $out) {
-        var sql = $script.text();
-        if(sql) sql = sql.trim();
-        else return;
+        var table = $("<table>").addClass("sql-result");
 
-        var verbose = $script.attr('verbose');
-
-        executeSQL(db, sql, $out.empty(), verbose);
-}
-
-function evalSQLScripts($slide, options) {
-    options = $.extend({}, options);
-    var $scripts = $("script[type=sql]", $slide);
-    var dbname = options.dbname || "db";
-
-    // create the output divs for the first invocation
-    if(! options.waiting) {
-        $scripts.each(function() {
-            var $script = $(this);
-            $out = $("<div>").text(
-                "Waiting for database \"" + dbname + "\" to load...");
-            $script.after($out);
+        // create the table header
+        var thead = $("<thead>");
+        var row = $("<tr>");
+        result.columns.forEach(function(name, i) {
+            row.append($("<td>").text(name));
         });
+        thead.append(row);
+        table.append(thead);
+
+        // create the table body
+        var tbody = $("<tbody>");
+        for(var i=0; i < result.values.length; i++) {
+            var tuple = result.values[i];
+            var row = $("<tr>");
+            tuple.forEach(function(val, j) {
+                row.append($("<td>").text(val));
+            });
+            tbody.append(row);
+
+            if(i > 1000) break;
+        }
+        table.append(tbody);
+        out.append(table);
     }
 
-    // wait for database to load
-    var db = window[dbname];
-    if(db) {
-        console.debug("DB is loaded");
-        $scripts.each(function() {
-            var $script = $(this);
-            evalSQLScript(db, $script,  $script.next());
-        });
-    } else {
-        setTimeout(function() {
-            evalSQLScripts($slide, $.extend(options, {waiting: true}));
-        }, 1000);
-    }
-}
-
-//
-// executes a SQL against a database
-//
-function executeSQL(db, sql, out, verbose) {
-    out.empty();
-    if(verbose) {
-        out.append($("<pre>").text(sql))
-    }
-    try {
-        var results = db.exec(sql);
-        window.results = results;
+    function renderResults(out, results, name, append) {
+        if(! append) out.empty();
+        if(name) {
+            out.append($("<div>").text("Table: " + name));
+        }
         if($.isArray(results)) {
-            for(var i in results) {
-                var result = results[i];
-                renderTable(out, result);
+            results.forEach(function(result, i) {
+                renderResult(out, result, true);
+            });
+        } else {
+            renderResult(out, results, true);
+        }
+    }
+
+    function listTables(db) {
+        var meta = db.exec("select name from sqlite_master");
+        var tables = []
+        if(meta.length > 0) {
+            tables = meta[0].values.map(function(tuple) {return tuple[0]});
+        }
+        return tables;
+    }
+
+    // ==================================
+    // Render a database
+    // ==================================
+    function renderDatabase(out, db) {
+        out.empty();
+        var tables = listTables(db);
+        if(tables.length > 0)
+            tables.forEach(function(t) {
+                var results = db.exec("SELECT * FROM " + t);
+                renderResults(out, results, t, true);
+            });
+        else
+            out.append("Database is empty.");
+    }
+
+    // ==================================
+    // Prepares <script type="q/a">
+    // ==================================
+    function prepare($slide) {
+        $("script[type='sql']", $slide).each(function() {
+            prepareSQL($(this));
+        });
+
+        $("button[sql-run]", $slide).each(function() {
+            prepareSQLButton($(this), $slide);
+        });
+    }
+
+    function emptyDiv($div) {
+        if($div) {
+            $div.empty().append($("<i>").addClass("fa fa-cog fa-spin"));
+        }
+    }
+
+    function errDiv($div, message) {
+        if($div) {
+            $div.empty().append($("<i>").addClass("fa fa-exclamation-triangle").css('color', 'crimson'));
+            if(message) {
+                $div.append($("<div>").text(message).addClass("alert alert-danger").css('padding', 20));
             }
         }
-        else if($.isPlainObject(results)) {
-            renderTable(out, results);
-        } else {
-            console.debug(results);
-        }
-    } catch(e) {
-        out.append($("<pre>")
-                .addClass("err")
-                .text(e.message));
     }
-}
 
-function renderTable(out, result) {
-    var table = $("<table>").addClass("sql-result");
+    function prepareSQLButton($btn, $slide) {
+        $btn.click(function() {
+            var db = window.db;
+            var sqlSource = $btn.attr('sql-source');
+            var sqlDump = $btn.attr('sql-dump');
+            var sqlOutput = $btn.attr('sql-output');
+            var sql;
+            if($(sqlSource).is("textarea")) {
+                sql = $(sqlSource, $slide).val();
+            } else {
+                sql = $(sqlSource, $slide).text();
+            }
+            console.debug("SQL:", sql);
 
-    // create the table header
-    var thead = $("<thead>");
-    var row = $("<tr>");
-    result.columns.forEach(function(name, i) {
-        row.append($("<td>").text(name));
-    });
-    thead.append(row);
-    table.append(thead);
+            var $sqlOutput, $sqlDump;
+            if(sqlOutput) $sqlOutput = $(sqlOutput, $slide);
+            if(sqlDump) $sqlDump = $(sqlDump, $slide);
 
-    // create the table body
-    var tbody = $("<tbody>");
-    result.values.forEach(function(tuple, i) {
-        var row = $("<tr>");
-        tuple.forEach(function(val, j) {
-            row.append($("<td>").text(val));
+            emptyDiv($sqlOutput);
+            emptyDiv($sqlDump);
+
+            setTimeout(function() {
+                try {
+                    if(sql) {
+                        var results = db.exec(sql);
+                        if($sqlOutput) {
+                            renderResults($sqlOutput, results, false);
+                        }
+                    }
+                    if($sqlDump) {
+                        renderDatabase($sqlDump, db, false);
+                    }
+                } catch(e) {
+                    sweetAlert("SQLError:", e.message, "error");
+                    errDiv($sqlOutput, e.message);
+                    errDiv($sqlDump, e.message);
+                }
+            }, 100);
         });
-        tbody.append(row);
-    });
-    table.append(tbody);
+    }
 
-    out.append(table);
-}
 
 // load the database from an existing sqlite3 file
 
@@ -115,8 +158,9 @@ function asyncLoadDb(url) {
     return deferred;
 }
 
-window.executeSQL = executeSQL;
-window.asyncLoadDb = asyncLoadDb;
-window.evalSQLScripts = evalSQLScripts;
+window.sqlHelper = {
+    prepare: prepare,
+    load: asyncLoadDb
+};
 
-})(window);
+})();

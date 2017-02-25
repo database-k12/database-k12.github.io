@@ -1,13 +1,17 @@
+
 <!doctype html>
 <html>
 	<head>
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-        <title>Relational Databases</title>
+        <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>Relational Databases</title>
 
-        <link rel="stylesheet" href="https://database-k12.github.io//css/bootstrap.css">
-        <link rel="stylesheet" href="https://database-k12.github.io//css/fonts/fonts.css">
-        <link rel="stylesheet" href="https://database-k12.github.io//css/font-awesome/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://database-k12.github.io//css/bootstrap.css">
+<link rel="stylesheet" href="https://database-k12.github.io//css/sweetalert.css">
+<link rel="stylesheet" href="https://database-k12.github.io//css/fonts/fonts.css">
+<link rel="stylesheet" href="https://database-k12.github.io//css/font-awesome/css/font-awesome.min.css">
+
+
         <link rel="stylesheet" href="https://database-k12.github.io//reveal.js/css/reveal.css">
         <link rel="stylesheet" href="https://database-k12.github.io//reveal.js/css/theme/white.css">
 
@@ -71,9 +75,271 @@ management from the growing financial banking industry.  <a href="box">!</a></p>
 
 <li><p>2015: Google Big Table Service</p></li>
 </ul>
+
+<h1 id="relational-database-management-systems-rdbms">Relational Database Management Systems (RDBMS)</h1>
+
+<p><a href="middle">!</a></p>
+
+<p>From 1974 - now (over 40 years):</p>
+
+<p><a href="box">!</a> The relational data model remains the most popular and time proven (1974 - now =
+over 40 years) data modeling framework.</p>
+
+<p><a href="&amp;&amp;&amp;">!</a></p>
+
+<p><a href="box">!</a> <em>Structured Query Language</em> (<strong>SQL</strong>) was and still is the industry standard in
+communicating with relational databases.</p>
+
+<h1 id="who-are-using-rdbms">Who are using RDBMS?</h1>
+
+<ul>
+<li><p>Stock exchanges</p></li>
+
+<li><p>Federal governments</p></li>
+
+<li><p>Walmart and every other Fortune 500 companies</p></li>
+
+<li><p>Schools</p></li>
+
+<li><p>Every mobile phones running Android or iOS systems</p></li>
+
+<li><p>Every Chrome or Firefox browsers</p></li>
+</ul>
+
+<p><a href="box">!</a> If you are reading this, most likely you are running a RDBMS right now.</p>
+
+<h1 id="let-s-get-started">Let&rsquo;s get started</h1>
+
+<p><a href="highlight">!</a></p>
+
+<h1 id="interacting-with-rdbms">Interacting with RDBMS</h1>
+
+<p>We will interact with a RDBMS system, known as SQLite, through your browser.</p>
+
+<p>Issue commands to RDBMS</p>
+
+<blockquote>
+<ul>
+<li><p>Create data</p></li>
+
+<li><p>Modify data</p></li>
+
+<li><p>Query data</p></li>
+</ul>
+</blockquote>
+
+<h1 id="elements-of-rdbms">Elements of RDBMS</h1>
+
+<ul>
+<li><p>A database</p>
+
+<blockquote>
+<ul>
+<li>name of the database</li>
+<li>a collection of tables</li>
+</ul>
+</blockquote>
+
+<p><a href="box">!</a>
+We will use a database that is already created
+as part of this Web page.</p></li>
+
+<li><p>A table</p>
+
+<blockquote>
+<ul>
+<li>name of the table</li>
+<li>a list of attributes</li>
+<li>a collection of tuples</li>
+</ul>
+</blockquote></li>
+</ul>
+
+<h1 id="creating-tables">Creating tables</h1>
+
+<pre><code class="language-sql">CREATE TABLE &lt;name&gt; (
+    &lt;attribute&gt; &lt;type&gt;, ...
+);
+</code></pre>
+
+<blockquote>
+<ol>
+<li><p>Specifies the attribute names and their types.</p></li>
+
+<li><p>Run multiple <code>CREATE TABLE</code> commands to create more than one table.
+<a href="note">!</a></p></li>
+</ol>
+</blockquote>
+
+<p><em>Example:</em></p>
+
+<pre><code class="language-sql">CREATE TABLE cities (
+    name text,
+    population integer
+);
+</code></pre>
+
+<h1 id="toc_8">_________________________</h1>
+
+<h2 id="try-it-out">Try it out</h2>
+
+<p><a href="columns 6:">!</a></p>
+
+<p><textarea style="height:300px; padding: 10px;">
+CREATE TABLE knows (
+    name text,
+    friend text
+)
+</textarea></p>
+
+<p><button 
+    class="btn btn-default"
+    sql-run
+    sql-source="textarea"
+    sql-dump="#output">Run</button></p>
+
+<p><a href="split">!</a></p>
+
+<h3 id="database">Database</h3>
+
+<div id="output"></div>
+
+<h1 id="delete-a-table">Delete a table</h1>
+
+<pre><code class="language-sql">DROP TABLE &lt;table&gt;;
+</code></pre>
+
+<h1 id="toc_12">__________________</h1>
+
+<p><textarea style="height:100px; padding: 10px;">
+</textarea></p>
+
+<p><a href="note">!</a> Can you delete the table created in previous slide?</p>
+
+<p><button
+  class="btn btn-default"
+  sql-run
+  sql-source="textarea"
+  sql-dump="#output">Run</button></p>
+
+<div id="output"></div>
+
+<h1 id="creating-tuples">Creating tuples</h1>
+
+<pre><code class="language-sql">INSERT INTO TABLE &lt;table&gt;
+VALUES (&lt;tuple&gt;), ... ;
+</code></pre>
+
+<p><em>Example</em>:</p>
+
+<pre><code class="language-sql clipboard">CREATE TABLE IF NOT EXISTS cities (name TEXT, population INTEGER);
+
+INSERT INTO cities VALUES ('Toronto', 2600000), ('Oshawa', 140000);
+</code></pre>
+
+<p><a href="note fragment">!</a> Note the <code>if not exists</code> clause with create table.</p>
+
+<h1 id="try-it-out-1">Try it out</h1>
+
+<p><a href="columns 8:">!</a></p>
+
+<p><textarea style="height:200px; padding: 10px"></textarea></p>
+
+<p><button class="btn btn-default"
+        sql-run
+        sql-source="textarea"
+        sql-dump="#output">Run</button></p>
+
+<p><a href="split">!</a></p>
+
+<div id="output"></div>
+
+<h1 id="selecting-tuples">SELECTING Tuples</h1>
+
+<p>What if we are only interested in some attributes of some tuples?</p>
+
+<p>Use the <em>select</em> statement:</p>
+
+<pre><code class="language-sql">SELECT &lt;attribute&gt; ...
+FROM &lt;table&gt;
+WHERE &lt;condition&gt;
+</code></pre>
+
+<p><em>Example:</em></p>
+
+<pre><code class="language-sql clipboard">SELECT population FROM cities WHERE name = 'Toronto'
+</code></pre>
+
+<h1 id="try-it-out-2">Try it out:</h1>
+
+<p><a href="columns 4:">!</a></p>
+
+<p><button class="btn btn-info"
+        sql-run
+        sql-dump=".all">Show database</button></p>
+
+<div class="all"></div>
+
+<p><a href="split">!</a></p>
+
+<p><textarea style="height:200px;padding: 10px;"></textarea></p>
+
+<p><button class="btn btn-default"
+        sql-run
+        sql-source="textarea"
+        sql-output="#output">Run</button></p>
+
+<div id="output"></div>
+
+<h1 id="deleting-tuples">DELETING tuples</h1>
+
+<ul>
+<li><p>Tuples can be removed from a table using the <code>DELETE</code>
+command.</p>
+
+<pre><code class="language-sql">DELETE FROM &lt;table&gt;
+WHERE &lt;condition&gt;
+</code></pre></li>
+
+<li><p>Example</p>
+
+<pre><code class="language-sql">DELETE FROM cities
+WHERE name = 'Oshawa'
+</code></pre></li>
+</ul>
+
+<h1 id="try-it-out-3">Try it out:</h1>
+
+<p><a href="columns 6:">!</a></p>
+
+<p><textarea style="height: 200px; padding: 10px"></textarea></p>
+
+<p><button class="btn btn-default"
+       sql-run
+       sql-source="textarea"
+       sql-dump=".output">Run</button></p>
+
+<p><a href="split">!</a></p>
+
+<div class="output"></div>
+
+<p><button class="btn btn-info" sql-run sql-dump=".output">Show database</button></p>
+
+<h1 id="summary">Summary</h1>
+
+<p><a href="highlight">!</a></p>
+
+<ul>
+<li><code>CREATE TABLE &lt;table&gt; ( &lt;attribute&gt; &lt;type&gt;, ... )</code></li>
+<li><code>DROP TABLE &lt;table&gt;</code></li>
+<li><code>INSERT INTO &lt;table&gt; VALUES (...), ...</code></li>
+<li><code>SELECT &lt;attribute&gt;, ... FROM &lt;table&gt; WHERE &lt;condition&gt;</code></li>
+<li><code>DELETE FROM &lt;table&gt; WHERE &lt;condition&gt;</code></li>
+</ul>
 </div>
         </div>
         <div class="footnote" style="position: fixed; 
+            z-index: 2000;
             bottom:0; 
             left:0;
             padding: 10px;
@@ -87,13 +353,27 @@ management from the growing financial banking industry.  <a href="box">!</a></p>
                 <a href="?print-pdf" class="btn btn-default cmd" style="color:red">
                     <i class="fa fa-file-pdf-o"></i>
                 </a>
-                <a href="../.." class="btn btn-default" 
+                <a href=".." class="btn btn-default" 
                     style="font-family:'Old Standard TT'; font-style:italic">
-                    <i lass="fa fa-angle-left"></i> home </a>
+                    <i lass="fa fa-angle-left"></i> back </a>
             </div>
         </div>
+        
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
 
-        <script src="https://database-k12.github.io//js/jquery-2.2.1.min.js"></script>
+  ga('create', 'UA-52618243-3', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+
+<script src="https://database-k12.github.io//js/jquery-2.2.1.min.js"></script>
+<script src="https://database-k12.github.io//js/sweetalert.min.js"></script>
+
         <script src="https://database-k12.github.io//js/masonry.pkgd.min.js"></script>
         <script src="https://database-k12.github.io//js/pdf.js"></script>
         <script src="https://database-k12.github.io//js/clipboard.min.js"></script>
@@ -108,6 +388,8 @@ management from the growing financial banking industry.  <a href="box">!</a></p>
 
         <script src="https://database-k12.github.io//script.js"></script>
 
+        
+        <script src="mysql.js"></script>
         
 
         <script>
@@ -263,19 +545,8 @@ management from the growing financial banking industry.  <a href="box">!</a></p>
             }
         }
 		</script>
-        
-<script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-
-  ga('create', 'UA-52618243-3', 'auto');
-  ga('send', 'pageview');
-
-</script>
-
-
 	</body>
 </html>
+
+
 
