@@ -45,6 +45,8 @@
 
 <p><a href="highlight">!</a></p>
 
+<div id="loading">Loading Starbucks database...</div>
+
 <h1 id="tables-in-the-database">Tables in the database</h1>
 
 <p><a href="columns 6:">!</a></p>
@@ -81,22 +83,14 @@ select * from countries
 
 <h1 id="toc_2">______________________</h1>
 
-<style>
-div.sql {
-    font-size: 15pt;
-    font-style: italic;
-    padding: 10px;
-    margin-bottom: 10px;
-    border: thin dashed #aaa;
-}
-</style>
-
 <div class="sql" 
     contenteditable="true" 
     style="height:200px">
 select count(*) from stores;<br>
 select count(*) from countries;<br>
 </div>
+
+<p><a href="note">!</a> Let&rsquo;s check now many tuples there are in each of the tables.</p>
 
 <p><button class="btn btn-primary"
   sql-run
@@ -106,6 +100,168 @@ select count(*) from countries;<br>
 <div class="output" 
 style="height: 300px; overflow:scroll; font-size:15pt">
 </div>
+
+<h1 id="selecting-tuples-by-conditions-from-a-single-table">Selecting tuples by conditions from a single table</h1>
+
+<pre><code class="language-sql">SELECT &lt;attribute-list&gt;
+FROM &lt;table&gt;
+WHERE &lt;condition&gt;
+</code></pre>
+
+<p><a href="note">!</a> The <code>&lt;condition&gt;</code> is any logical condition on the tuples of the single
+table.</p>
+
+<h1 id="toc_4">_______________</h1>
+
+<p><a href="columns 6:">!</a></p>
+
+<div class="sql" contenteditable="true" style="height:200px">
+select Street_Address, City, State_Province, Country
+from stores
+where State_Province = 'ON';
+</div>
+
+<p><button class="btn btn-default"
+    sql-run
+    sql-source=".sql"
+    sql-output=".output">Run</button></p>
+
+<p><em>Challenge</em>: list the Starbucks in Toronto.</p>
+
+<p><a href="split">!</a></p>
+
+<div class="output" 
+style="height: 300px; overflow:scroll; font-size:15pt">
+</div>
+
+<h1 id="joining-multiple-tables">Joining multiple tables</h1>
+
+<p>There is a second table in the database:</p>
+
+<pre><code class="language-text">countries(Common_Name, Type, Capital, Letter_Code, ...)
+</code></pre>
+
+<p>Can you list the country names, and their types?</p>
+
+<p><a href="columns 6:">!</a></p>
+
+<p><textarea class="sql" style="height:200px"></textarea></p>
+
+<p><button class="btn btn-default"
+    sql-run
+    sql-source=".sql"
+    sql-output=".output">Run</button></p>
+
+<p><a href="split">!</a></p>
+
+<div class="output" style="height: 300px; overflow:scroll; font-size:15pt"></div>
+
+<h1 id="toc_6">_______________________</h1>
+
+<p>We can join the two tables:</p>
+
+<pre><code class="language-sql">SELECT &lt;attributes from both tables&gt;
+FROM stores JOIN countries ON &lt;join-condition&gt;
+WHERE &lt;condition&gt;
+</code></pre>
+
+<p><em>Example:</em></p>
+
+<pre><code class="language-sql clipboard">SELECT Street_Addres, Common_Name
+FROM stores JOIN countries ON stores.Country = countries.Letter_Code;
+</code></pre>
+
+<h1 id="toc_7">___________________________</h1>
+
+<p>Let&rsquo;s try it out:</p>
+
+<p><textarea class="sql" style="height:200px"></textarea></p>
+
+<p><button class="btn btn-default"
+    sql-run
+    sql-source=".sql"
+    sql-output=".output">Run</button></p>
+
+<div class="output" style="height: 300px; overflow:scroll; font-size:15pt"></div>
+
+<h1 id="aggregation">Aggregation</h1>
+
+<p>We can group tuples by their commonality over some specified attributes, and
+compute the <em>aggregate</em> values based on the groups.</p>
+
+<pre><code class="language-sql">SELECT &lt;group-by attributes&gt; &lt;aggregation ...&gt;
+FROM ...
+WHERE ...
+GROUP BY &lt;group-by attributes&gt;
+</code></pre>
+
+<h1 id="toc_9">_____________________</h1>
+
+<p>Here is a query that sorts countries by the number of Starbucks they have.</p>
+
+<p><a href="columns 6:">!</a></p>
+
+<pre><code class="language-sql sm clipboard">SELECT Country, count(*) AS stores
+FROM stores
+GROUP BY Country
+ORDER BY stores DESC
+</code></pre>
+
+<p><button class="btn btn-default"
+    sql-run
+    sql-source="pre code"
+    sql-output=".output">Run</button></p>
+
+<p>Can you use <code>JOIN</code> to convert the country code to common names?</p>
+
+<p><textarea style="height: 130px; font-size: 12pt"></textarea></p>
+
+<p><button class="btn btn-default"
+    sql-run
+    sql-source="textarea"
+    sql-output=".output">Run</button></p>
+
+<p><a href="split">!</a></p>
+
+<div class="output"></div>
+
+<h1 id="toc_10">_______________________</h1>
+
+<p><em>Challenge</em></p>
+
+<p>Write a query to list the top cities ranked by the number of starbucks.</p>
+
+<p><textarea style="font-size: 12pt"></textarea></p>
+
+<p><a href="note">!</a>
+<button class="btn btn-default"
+    sql-run
+    sql-source="textarea"
+    sql-output=".output">Run</button></p>
+
+<div class="output" style="overflow: scroll; height: 350px; font-size: 85%"></div>
+
+<h1 id="summary">Summary</h1>
+
+<p><a href="highlight">!</a></p>
+
+<ul>
+<li><p>Simple SELECT queries</p></li>
+
+<li><p>SELECT queries with table joins</p></li>
+
+<li><p>SELECT queries with aggregation</p></li>
+</ul>
+
+<style>
+textarea, div.sql {
+    font-family: monospace;
+    font-size: 15pt;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: thin dashed #aaa;
+}
+</style>
 </div>
         </div>
         <div class="footnote" style="position: fixed; 

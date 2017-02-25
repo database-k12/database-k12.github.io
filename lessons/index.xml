@@ -20,6 +20,8 @@
 
 &lt;p&gt;&lt;a href=&#34;highlight&#34;&gt;!&lt;/a&gt;&lt;/p&gt;
 
+&lt;div id=&#34;loading&#34;&gt;Loading Starbucks database...&lt;/div&gt;
+
 &lt;h1 id=&#34;tables-in-the-database&#34;&gt;Tables in the database&lt;/h1&gt;
 
 &lt;p&gt;&lt;a href=&#34;columns 6:&#34;&gt;!&lt;/a&gt;&lt;/p&gt;
@@ -56,22 +58,14 @@ select * from countries
 
 &lt;h1 id=&#34;toc_2&#34;&gt;______________________&lt;/h1&gt;
 
-&lt;style&gt;
-div.sql {
-    font-size: 15pt;
-    font-style: italic;
-    padding: 10px;
-    margin-bottom: 10px;
-    border: thin dashed #aaa;
-}
-&lt;/style&gt;
-
 &lt;div class=&#34;sql&#34; 
     contenteditable=&#34;true&#34; 
     style=&#34;height:200px&#34;&gt;
 select count(*) from stores;&lt;br&gt;
 select count(*) from countries;&lt;br&gt;
 &lt;/div&gt;
+
+&lt;p&gt;&lt;a href=&#34;note&#34;&gt;!&lt;/a&gt; Let&amp;rsquo;s check now many tuples there are in each of the tables.&lt;/p&gt;
 
 &lt;p&gt;&lt;button class=&#34;btn btn-primary&#34;
   sql-run
@@ -81,6 +75,168 @@ select count(*) from countries;&lt;br&gt;
 &lt;div class=&#34;output&#34; 
 style=&#34;height: 300px; overflow:scroll; font-size:15pt&#34;&gt;
 &lt;/div&gt;
+
+&lt;h1 id=&#34;selecting-tuples-by-conditions-from-a-single-table&#34;&gt;Selecting tuples by conditions from a single table&lt;/h1&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-sql&#34;&gt;SELECT &amp;lt;attribute-list&amp;gt;
+FROM &amp;lt;table&amp;gt;
+WHERE &amp;lt;condition&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;a href=&#34;note&#34;&gt;!&lt;/a&gt; The &lt;code&gt;&amp;lt;condition&amp;gt;&lt;/code&gt; is any logical condition on the tuples of the single
+table.&lt;/p&gt;
+
+&lt;h1 id=&#34;toc_4&#34;&gt;_______________&lt;/h1&gt;
+
+&lt;p&gt;&lt;a href=&#34;columns 6:&#34;&gt;!&lt;/a&gt;&lt;/p&gt;
+
+&lt;div class=&#34;sql&#34; contenteditable=&#34;true&#34; style=&#34;height:200px&#34;&gt;
+select Street_Address, City, State_Province, Country
+from stores
+where State_Province = &#39;ON&#39;;
+&lt;/div&gt;
+
+&lt;p&gt;&lt;button class=&#34;btn btn-default&#34;
+    sql-run
+    sql-source=&#34;.sql&#34;
+    sql-output=&#34;.output&#34;&gt;Run&lt;/button&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;Challenge&lt;/em&gt;: list the Starbucks in Toronto.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;split&#34;&gt;!&lt;/a&gt;&lt;/p&gt;
+
+&lt;div class=&#34;output&#34; 
+style=&#34;height: 300px; overflow:scroll; font-size:15pt&#34;&gt;
+&lt;/div&gt;
+
+&lt;h1 id=&#34;joining-multiple-tables&#34;&gt;Joining multiple tables&lt;/h1&gt;
+
+&lt;p&gt;There is a second table in the database:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-text&#34;&gt;countries(Common_Name, Type, Capital, Letter_Code, ...)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Can you list the country names, and their types?&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;columns 6:&#34;&gt;!&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;textarea class=&#34;sql&#34; style=&#34;height:200px&#34;&gt;&lt;/textarea&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;button class=&#34;btn btn-default&#34;
+    sql-run
+    sql-source=&#34;.sql&#34;
+    sql-output=&#34;.output&#34;&gt;Run&lt;/button&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;split&#34;&gt;!&lt;/a&gt;&lt;/p&gt;
+
+&lt;div class=&#34;output&#34; style=&#34;height: 300px; overflow:scroll; font-size:15pt&#34;&gt;&lt;/div&gt;
+
+&lt;h1 id=&#34;toc_6&#34;&gt;_______________________&lt;/h1&gt;
+
+&lt;p&gt;We can join the two tables:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-sql&#34;&gt;SELECT &amp;lt;attributes from both tables&amp;gt;
+FROM stores JOIN countries ON &amp;lt;join-condition&amp;gt;
+WHERE &amp;lt;condition&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;em&gt;Example:&lt;/em&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-sql clipboard&#34;&gt;SELECT Street_Addres, Common_Name
+FROM stores JOIN countries ON stores.Country = countries.Letter_Code;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h1 id=&#34;toc_7&#34;&gt;___________________________&lt;/h1&gt;
+
+&lt;p&gt;Let&amp;rsquo;s try it out:&lt;/p&gt;
+
+&lt;p&gt;&lt;textarea class=&#34;sql&#34; style=&#34;height:200px&#34;&gt;&lt;/textarea&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;button class=&#34;btn btn-default&#34;
+    sql-run
+    sql-source=&#34;.sql&#34;
+    sql-output=&#34;.output&#34;&gt;Run&lt;/button&gt;&lt;/p&gt;
+
+&lt;div class=&#34;output&#34; style=&#34;height: 300px; overflow:scroll; font-size:15pt&#34;&gt;&lt;/div&gt;
+
+&lt;h1 id=&#34;aggregation&#34;&gt;Aggregation&lt;/h1&gt;
+
+&lt;p&gt;We can group tuples by their commonality over some specified attributes, and
+compute the &lt;em&gt;aggregate&lt;/em&gt; values based on the groups.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-sql&#34;&gt;SELECT &amp;lt;group-by attributes&amp;gt; &amp;lt;aggregation ...&amp;gt;
+FROM ...
+WHERE ...
+GROUP BY &amp;lt;group-by attributes&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h1 id=&#34;toc_9&#34;&gt;_____________________&lt;/h1&gt;
+
+&lt;p&gt;Here is a query that sorts countries by the number of Starbucks they have.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;columns 6:&#34;&gt;!&lt;/a&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-sql sm clipboard&#34;&gt;SELECT Country, count(*) AS stores
+FROM stores
+GROUP BY Country
+ORDER BY stores DESC
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;button class=&#34;btn btn-default&#34;
+    sql-run
+    sql-source=&#34;pre code&#34;
+    sql-output=&#34;.output&#34;&gt;Run&lt;/button&gt;&lt;/p&gt;
+
+&lt;p&gt;Can you use &lt;code&gt;JOIN&lt;/code&gt; to convert the country code to common names?&lt;/p&gt;
+
+&lt;p&gt;&lt;textarea style=&#34;height: 130px; font-size: 12pt&#34;&gt;&lt;/textarea&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;button class=&#34;btn btn-default&#34;
+    sql-run
+    sql-source=&#34;textarea&#34;
+    sql-output=&#34;.output&#34;&gt;Run&lt;/button&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;split&#34;&gt;!&lt;/a&gt;&lt;/p&gt;
+
+&lt;div class=&#34;output&#34;&gt;&lt;/div&gt;
+
+&lt;h1 id=&#34;toc_10&#34;&gt;_______________________&lt;/h1&gt;
+
+&lt;p&gt;&lt;em&gt;Challenge&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;Write a query to list the top cities ranked by the number of starbucks.&lt;/p&gt;
+
+&lt;p&gt;&lt;textarea style=&#34;font-size: 12pt&#34;&gt;&lt;/textarea&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;note&#34;&gt;!&lt;/a&gt;
+&lt;button class=&#34;btn btn-default&#34;
+    sql-run
+    sql-source=&#34;textarea&#34;
+    sql-output=&#34;.output&#34;&gt;Run&lt;/button&gt;&lt;/p&gt;
+
+&lt;div class=&#34;output&#34; style=&#34;overflow: scroll; height: 350px; font-size: 85%&#34;&gt;&lt;/div&gt;
+
+&lt;h1 id=&#34;summary&#34;&gt;Summary&lt;/h1&gt;
+
+&lt;p&gt;&lt;a href=&#34;highlight&#34;&gt;!&lt;/a&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;Simple SELECT queries&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;SELECT queries with table joins&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;SELECT queries with aggregation&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;style&gt;
+textarea, div.sql {
+    font-family: monospace;
+    font-size: 15pt;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: thin dashed #aaa;
+}
+&lt;/style&gt;
 </description>
     </item>
     
